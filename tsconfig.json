@@ -1,0 +1,71 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Объяснения
+// "compilerOptions": {
+//     "outDir": "./dist/",
+//          То, куда производится сборка, в нашем случае неважно, так как сборка через вебпак
+//     "noImplicitAny": true,
+//          Не позволяет использовать переменные без указания типа
+//     "module": "ESNext",
+//          Не совсем понял, зачем (1 урок, 1 видео, 24:40)
+//     "target": "es5",
+//          В какую спецификацию компилируем: ES5 чтобы большинство браузером поддерживало
+//     "jsx": "react",
+//          Позволяет писать реактовские конструкции по типу return(<div>TEXT</div>)
+//     "allowJs": true,
+//          Позволяет компилятору обрабатывать не только ts файлы, но и js
+//     "moduleResolution": "node",
+//          Определяет то, какие импорты будут (node или classic), почти всегда используется node
+//     "esModuleInterop": true, - 
+//          esModuleInterop позволяет работать с пакетами, которые используют
+//          common js как с обычными пакета с помощью import (require() module.export) = common js
+//          import Moment from 'moment';
+//          без флага esModuleInterop результат undefined
+//          console.log(Moment);
+//          c флагом результат [object Object]
+//          console.log(Moment);
+//     "allowSyntheticDefaultImports": true,
+//          Если какая-либо библиотека не имеет default import,
+//          лоадеры вроде ts-loader или babel-loader автоматически создают их
+//          вместо такого импорта
+//          import * as React from 'react';
+//          можно писать такой
+//          import React from 'react';
+// },
+
+
+// "ts-node": {
+//     "compilerOptions": {
+//         "module": "CommonJS"
+//     }
+// },
+
+// Нужен для корректных импортов
