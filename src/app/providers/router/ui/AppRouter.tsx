@@ -1,15 +1,15 @@
-import { Suspense } from "react";
-import { useTranslation } from "react-i18next";
-import { Route, Routes } from "react-router-dom";
-import { routeConfig } from "shared/config/routeConfig/routeConfig";
+import { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Route, Routes } from 'react-router-dom';
+import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 
 const AppRouter = () => {
     const { t } = useTranslation();
 
     return (
-        <Suspense fallback={<div className="page-wrapper">{t("Загрузка...")}</div>}>
+        <Suspense fallback={<div className="page-wrapper">{t('Загрузка...')}</div>}>
             <Routes>
-                {Object.values(routeConfig).map(route =>
+                {Object.values(routeConfig).map((route) => (
                     <Route
                         key={route.path}
                         path={route.path}
@@ -19,10 +19,10 @@ const AppRouter = () => {
                             </div>
                         )}
                     />
-                )}
+                ))}
             </Routes>
         </Suspense>
-    )
-}
+    );
+};
 
 export default AppRouter;
