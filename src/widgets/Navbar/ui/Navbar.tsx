@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to="/about"
+                    to='/about'
                 >
                     {
                         t('О сайте')
