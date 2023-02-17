@@ -9,7 +9,9 @@
         "moduleResolution": "node",
         "baseUrl": ".",
         "paths": {
-            "*": ["./src/*"]
+            "*": [
+                "./src/*"
+            ]
         },
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -19,19 +21,11 @@
             "module": "CommonJS"
         }
     },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ],
 }
-
-
-
-
-
-
-
-
-
-
-
-
 // Объяснения
 // "compilerOptions": {
 //     "outDir": "./dist/",
@@ -64,12 +58,9 @@
 //          можно писать такой
 //          import React from 'react';
 // },
-
-
 // "ts-node": {
 //     "compilerOptions": {
 //         "module": "CommonJS"
 //     }
 // },
-
 // Нужен для корректных импортов
