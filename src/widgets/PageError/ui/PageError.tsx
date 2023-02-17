@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
 import cl from './PageError.module.scss';
+import logoGif from './errorGif.gif';
+import reloadIcon from './reloadIcon.png';
 
 interface PageErrorProps {
     className?: string;
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
-    const { t } = useTranslation('pageError');
+    const { t, i18n } = useTranslation('pageError');
 
     const reloadPage = () => {
         window.location.reload();
@@ -16,11 +17,15 @@ export const PageError = ({ className }: PageErrorProps) => {
 
     return (
         <div className={classNames(cl.PageError, {}, [className])}>
-            <p>{t('Произошла непредвиденная ошибка')}</p>
+            <div className={classNames(cl.textBlock, {}, [])}>
+                <p className={classNames(i18n.language === 'ru' ? cl.textRu : cl.textEn, {}, [className])}>{t('Упс, произошла ошибка')}</p>
+            </div>
 
-            <Button onClick={reloadPage}>
-                {t('Обновить страницу')}
-            </Button>
+            <img className={classNames(cl.logoGif, {}, [])} src={logoGif} />
+
+            <div className={classNames(cl.reloadButton, {}, [])}>
+                <img className={classNames(cl.reloadButtonIcon, {}, [])} onClick={reloadPage} src={reloadIcon} />
+            </div>
         </div>
     );
 };
