@@ -17,7 +17,7 @@ export const PageError = ({ className }: PageErrorProps) => {
 
     return (
         <div className={classNames(cl.PageError, {}, [className])}>
-            <div className={classNames(cl.textBlock, {}, [])}>
+            {/* <div className={classNames(cl.textBlock, {}, [])}>
                 <p
                     className={
                         classNames(i18n.language === 'ru' ? cl.textRu : cl.textEn, {}, [className])
@@ -25,9 +25,9 @@ export const PageError = ({ className }: PageErrorProps) => {
                 >
                     {t('Упс, произошла ошибка')}
                 </p>
-            </div>
+            </div> */}
 
-            <img className={classNames(cl.logoGif, {}, [])} src={logoGif} />
+            {/* <img className={classNames(cl.logoGif, {}, [])} src={logoGif} /> */}
 
             <div className={classNames(cl.reloadButton, {}, [])}>
                 <img
