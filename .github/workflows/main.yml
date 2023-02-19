@@ -1,5 +1,4 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   push:
     branches: [ master ]
@@ -14,17 +13,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Starting Node.js ${{ matrix.node-version }}
+      - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        uses: npm install
+        run: npm install
       - name: build production project
-        uses: npm run build:prod
+        run: npm run build:prod
       - name: linting typescript
-        uses: npm run lint:ts
+        run: npm run lint:ts
       - name: linting scss
-        uses: npm run lint:scss
+        run: npm run lint:scss
       - name: unit testing
-        uses: npm run test:unit
+        run: npm run test:unit
