@@ -1,11 +1,11 @@
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { ThemeSwither } from 'widgets/ThemeSwitcher';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import MainPageIcon from 'shared/assets/icons/mainPage.svg';
 import cl from './Sidebar.module.scss';
@@ -16,6 +16,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
+    const { t } = useTranslation('sidebar');
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -66,7 +67,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
 
             <div className={cl.switchers}>
-                <ThemeSwither />
+                <ThemeSwitcher />
                 <LangSwitcher short={collapsed} className={cl.lang} />
             </div>
         </div>
