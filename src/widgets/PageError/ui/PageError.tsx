@@ -25,9 +25,9 @@ export const PageError = ({ className }: PageErrorProps) => {
                 >
                     {t('Упс, произошла ошибка')}
                 </p>
-            </div> */}
+            </div>
 
-            {/* <img className={classNames(cl.logoGif, {}, [])} src={logoGif} /> */}
+            <img className={classNames(cl.logoGif, {}, [])} src={logoGif} /> */}
 
             <div className={classNames(cl.reloadButton, {}, [])}>
                 <img
