@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import cl from './PageError.module.scss';
 import logoGif from './errorGif.gif';
 import reloadIcon from './reloadIcon.png';
@@ -8,7 +9,7 @@ interface PageErrorProps {
     className?: string;
 }
 
-export const PageError = ({ className }: PageErrorProps) => {
+export const PageError = memo(({ className }: PageErrorProps) => {
     const { t, i18n } = useTranslation('pageError');
 
     const reloadPage = () => {
@@ -38,4 +39,4 @@ export const PageError = ({ className }: PageErrorProps) => {
             </div>
         </div>
     );
-};
+});
