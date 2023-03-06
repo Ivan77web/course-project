@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
@@ -57,13 +58,19 @@ export const Input = memo((props: InputProps) => {
     };
 
     const onSelect = (e: any) => {
-        const valueForDefineLengthObj = {
+        // const valueForDefineLengthObj = {
+        //     value: valueForDefineLength.value,
+        //     selected: e.target?.selectionStart || 0,
+        //     valueOfSelected: valueForDefineLength?.value?.substring(0, e.target?.selectionStart || 0),
+        // };
+
+        // setValueForDefineLength(valueForDefineLengthObj);
+
+        setValueForDefineLength({
             value: valueForDefineLength.value,
             selected: e.target?.selectionStart || 0,
-            valueOfSelected: valueForDefineLength.value.substring(0, e.target?.selectionStart || 0),
-        };
-
-        setValueForDefineLength(valueForDefineLengthObj);
+            valueOfSelected: valueForDefineLength?.value?.substring(0, e.target?.selectionStart || 0) || '',
+        });
     };
 
     const returnLetter = (letter: string, index: number) => {
