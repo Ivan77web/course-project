@@ -1,7 +1,7 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUserName';
 import React, {
-    memo, useCallback, useEffect, useState,
+    memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

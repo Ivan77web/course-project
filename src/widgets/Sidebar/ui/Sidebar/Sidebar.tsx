@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
@@ -13,6 +13,14 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState<boolean>(false);
+
+    const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+        <SidebarItem
+            key={item.path}
+            item={item}
+            collapsed={collapsed}
+        />
+    )), [collapsed]);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -35,7 +43,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             </Button>
 
             <div className={cl.items}>
-                {SidebarItemsList.map((item) => <SidebarItem key={item.path} item={item} collapsed={collapsed} />)}
+                {itemsList}
             </div>
 
             <div className={cl.switchers}>

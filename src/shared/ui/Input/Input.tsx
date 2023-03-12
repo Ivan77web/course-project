@@ -2,16 +2,17 @@
 import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cl from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autoFocus?: boolean;
+    readOnly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -22,6 +23,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         autoFocus,
+        readOnly,
         ...otherProps
     } = props;
 
@@ -33,11 +35,19 @@ export const Input = memo((props: InputProps) => {
         valueOfSelected: '',
     });
 
+    const mods: Mods = {
+        [cl[readOnly]]: readOnly,
+    };
+
+    const isCaretVisible = isFocused && !readOnly;
+
     // refs
 
     const refBlockForDefineLength = useRef(null);
     const refCaret = useRef(null);
     const refInput = useRef<HTMLInputElement>(null);
+
+    // funcs
 
     const onChangeHundler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
@@ -74,15 +84,19 @@ export const Input = memo((props: InputProps) => {
     };
 
     const returnLetter = (letter: string, index: number) => {
-        if (index < valueForDefineLength.selected) {
-            if (letter !== ' ') {
-                return letter;
+        if (!readOnly) {
+            if (index < valueForDefineLength.selected) {
+                if (letter !== ' ') {
+                    return letter;
+                }
+                return ' ';
             }
-            return ' ';
         }
 
         return '';
     };
+
+    // useEffects
 
     useEffect(() => {
         if (refBlockForDefineLength?.current && refBlockForDefineLength?.current?.innerHTML && refInput.current) {
@@ -127,10 +141,11 @@ export const Input = memo((props: InputProps) => {
                     onFocus={onFocus}
                     onBlur={onBlur}
                     onSelect={onSelect}
+                    readOnly={readOnly}
                     {...otherProps}
                 />
 
-                {isFocused && (
+                {isCaretVisible && (
                     <span
                         ref={refCaret}
                         className={cl.caret}
