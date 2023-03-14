@@ -7,14 +7,18 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadOnly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
     profileReducer,
+    ValidateProfileErrors,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -27,14 +31,23 @@ interface ProfilePageProps {
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const dispatch = useAppDispatch();
+    const { t } = useTranslation('profile');
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileIsLoading);
     const readOnly = useSelector(getProfileReadOnly);
+    const validateErrors = useSelector(getProfileValidateErrors);
 
-    useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+    const validateErrorsTranslate = {
+        [ValidateProfileErrors.INCORRECT_AGE]: t('Некорректный возраст'),
+        [ValidateProfileErrors.INCORRECT_AVATAR]: t('Некорректная ссылка на аватар'),
+        [ValidateProfileErrors.INCORRECT_CITY]: t('Некорректный город'),
+        [ValidateProfileErrors.INCORRECT_COUNTRY]: t('Некорректная страна'),
+        [ValidateProfileErrors.INCORRECT_CURRENCY]: t('Некорректная валюта'),
+        [ValidateProfileErrors.INCORRECT_NAMES]: t('Некорректное имя/фамилия/username'),
+        [ValidateProfileErrors.NO_DATA]: t('Данные не указаны'),
+        [ValidateProfileErrors.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+    };
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -69,10 +82,25 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
 
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
+
+                {validateErrors?.length && validateErrors.map((err) => (
+                    <Text
+                        theme={TextTheme.ERROR}
+                        text={validateErrorsTranslate[err]}
+                        key={err}
+                    />
+                ))}
+
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}
