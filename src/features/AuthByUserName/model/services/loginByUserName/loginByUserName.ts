@@ -26,8 +26,6 @@ export const loginByUserName = createAsyncThunk<
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
 
-            console.log(localStorage.getItem(USER_LOCALSTORAGE_KEY));
-
             dispatch(userActions.setAuthData(response.data));
 
             // extra.navigate('/about');
