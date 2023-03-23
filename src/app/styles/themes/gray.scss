@@ -2,8 +2,15 @@
 .app_gray_theme {
     --bg-color: #e8ece8;
     --inverted-bg-color: #5f765f;
-    --primary-color: #243219;
+    --primary-color: #394e29;
     --inverted-primary-color: #eff6e9;
-    --secondary-color: red;
-    --inverted-secondary-color: orange;
+    --secondary-color: #487029;
+    --inverted-secondary-color: #abb7a2;
+
+    // skeleton
+    --skeleton-color: #9ca99c;
+    --skeleton-shadow: #adbead;
+
+    // code
+    --code-bg: #fff;
 }

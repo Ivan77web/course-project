@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -89,3 +89,10 @@ ErrorTitleWithTextDark.args = {
     theme: TextTheme.ERROR,
 };
 ErrorTitleWithTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+    title: 'Title lorem ipsum',
+    text: 'Text lorem ipsum',
+    size: TextSize.L,
+};
