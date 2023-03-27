@@ -1,5 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
@@ -84,19 +86,37 @@ const article: Article = {
 };
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};
 Normal.decorators = [StoreDecorator({
     articleDatails: {
         data: article,
     },
 })];
 
-export const Loading = Template.bind({});
-Loading.args = {
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [
+    StoreDecorator({
+        articleDatails: {
+            data: article,
+        },
+    }),
+    ThemeDecorator(Theme.DARK),
+];
 
-};
+export const Gray = Template.bind({});
+Gray.args = {};
+Gray.decorators = [
+    StoreDecorator({
+        articleDatails: {
+            data: article,
+        },
+    }),
+    ThemeDecorator(Theme.GRAY),
+];
+
+export const Loading = Template.bind({});
+Loading.args = {};
 Loading.decorators = [StoreDecorator({
     articleDatails: {
         isLoading: true,
@@ -104,9 +124,7 @@ Loading.decorators = [StoreDecorator({
 })];
 
 export const Error = Template.bind({});
-Error.args = {
-
-};
+Error.args = {};
 Error.decorators = [StoreDecorator({
     articleDatails: {
         error: 'error',

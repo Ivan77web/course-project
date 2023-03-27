@@ -28,8 +28,6 @@ export const loginByUserName = createAsyncThunk<
 
             dispatch(userActions.setAuthData(response.data));
 
-            // extra.navigate('/about');
-
             return response.data;
         } catch (e) {
             console.log(e);

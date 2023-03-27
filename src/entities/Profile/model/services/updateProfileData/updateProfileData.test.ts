@@ -13,6 +13,7 @@ const data = {
     currency: Currency.RUB,
     city: 'Moscow',
     avatar: 'path_to_avatar',
+    id: '1',
 };
 
 describe('updateProfileData', () => {
