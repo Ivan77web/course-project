@@ -1,14 +1,21 @@
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Article, ArticleView } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
-interface ArticlesPageProps {
-    className?: string;
-}
+export default {
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleListItem>;
+
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
 /* eslint-disable max-len */
-const articlesTest = {
+const articleTest = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -85,28 +92,44 @@ const articlesTest = {
     ],
 } as Article;
 
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
-    const { className } = props;
-    const { t } = useTranslation('articles');
-
-    return (
-        <div className={classNames('', {}, [className])}>
-            {/* <ArticleList articles={[articlesTest]} /> */}
-            <ArticleList
-                isLoading
-                view={ArticleView.BIG}
-                articles={
-                    new Array(16)
-                        .fill(0)
-                        .map((item, index) => ({
-                            ...articlesTest,
-                            id: String(index),
-                        }
-                        ))
-                }
-            />
-        </div>
-    );
+export const BigCardNormal = Template.bind({});
+BigCardNormal.args = {
+    article: articleTest,
+    view: ArticleView.BIG,
 };
+BigCardNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-export default memo(ArticlesPage);
+export const BigCardDark = Template.bind({});
+BigCardDark.args = {
+    article: articleTest,
+    view: ArticleView.BIG,
+};
+BigCardDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BigCardGray = Template.bind({});
+BigCardGray.args = {
+    article: articleTest,
+    view: ArticleView.BIG,
+};
+BigCardGray.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const SmallCardNormal = Template.bind({});
+SmallCardNormal.args = {
+    article: articleTest,
+    view: ArticleView.SMALL,
+};
+SmallCardNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const SmallCardDark = Template.bind({});
+SmallCardDark.args = {
+    article: articleTest,
+    view: ArticleView.SMALL,
+};
+SmallCardDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SmallCardGray = Template.bind({});
+SmallCardGray.args = {
+    article: articleTest,
+    view: ArticleView.SMALL,
+};
+SmallCardGray.decorators = [ThemeDecorator(Theme.GRAY)];

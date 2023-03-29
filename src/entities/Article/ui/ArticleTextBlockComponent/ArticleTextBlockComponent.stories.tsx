@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ArticleTextBlockComponent } from './ArticleTextBlockComponent';
 
 export default {
-    title: 'entities/ArticleTextBlock',
+    title: 'entities/Article/ArticleTextBlock',
     component: ArticleTextBlockComponent,
     argTypes: {
         backgroundColor: { control: 'color' },

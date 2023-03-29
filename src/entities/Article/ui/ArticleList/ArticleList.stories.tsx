@@ -1,14 +1,21 @@
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Article, ArticleView } from '../../model/types/article';
+import { ArticleList } from './ArticleList';
 
-interface ArticlesPageProps {
-    className?: string;
-}
+export default {
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleList>;
+
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
 /* eslint-disable max-len */
-const articlesTest = {
+const articleTest = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -85,28 +92,98 @@ const articlesTest = {
     ],
 } as Article;
 
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
-    const { className } = props;
-    const { t } = useTranslation('articles');
-
-    return (
-        <div className={classNames('', {}, [className])}>
-            {/* <ArticleList articles={[articlesTest]} /> */}
-            <ArticleList
-                isLoading
-                view={ArticleView.BIG}
-                articles={
-                    new Array(16)
-                        .fill(0)
-                        .map((item, index) => ({
-                            ...articlesTest,
-                            id: String(index),
-                        }
-                        ))
-                }
-            />
-        </div>
-    );
+export const BigNormal = Template.bind({});
+BigNormal.args = {
+    isLoading: false,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.BIG,
 };
+BigNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-export default memo(ArticlesPage);
+export const BigDark = Template.bind({});
+BigDark.args = {
+    isLoading: false,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.BIG,
+};
+BigDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BigGray = Template.bind({});
+BigGray.args = {
+    isLoading: false,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.BIG,
+};
+BigGray.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const BigNormalIsLoading = Template.bind({});
+BigNormalIsLoading.args = {
+    isLoading: true,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.BIG,
+};
+BigNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const BigDarkIsLoading = Template.bind({});
+BigDarkIsLoading.args = {
+    isLoading: true,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.BIG,
+};
+BigDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BigGrayIsLoading = Template.bind({});
+BigGrayIsLoading.args = {
+    isLoading: true,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.BIG,
+};
+BigGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const SmallNormal = Template.bind({});
+SmallNormal.args = {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.SMALL,
+};
+SmallNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const SmallDark = Template.bind({});
+SmallDark.args = {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.SMALL,
+};
+SmallDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SmallGray = Template.bind({});
+SmallGray.args = {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.SMALL,
+};
+SmallGray.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const SmallNormalIsLoading = Template.bind({});
+SmallNormalIsLoading.args = {
+    isLoading: true,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.SMALL,
+};
+SmallNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const SmallDarkIsLoading = Template.bind({});
+SmallDarkIsLoading.args = {
+    isLoading: true,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.SMALL,
+};
+SmallDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SmallGrayIsLoading = Template.bind({});
+SmallGrayIsLoading.args = {
+    isLoading: true,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
+    view: ArticleView.SMALL,
+};
+SmallGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];
