@@ -37,14 +37,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     };
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cl.articleList, {}, [className, cl[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(cl.articleList, {}, [className, cl[view]])}>
             {
@@ -53,6 +45,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     : null
 
             }
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });
