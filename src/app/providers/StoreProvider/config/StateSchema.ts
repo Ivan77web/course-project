@@ -8,6 +8,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { LoginSchema } from 'features/AuthByUserName';
+import { ScrollSaveSchema } from 'features/scrollSave';
 import { ArticleDetailsCommentSchema } from 'pages/ArticlesDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { To, NavigateOptions } from 'react-router-dom';
@@ -15,6 +16,7 @@ import { To, NavigateOptions } from 'react-router-dom';
 export interface StateSchema {
     counter: counterSchema;
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
@@ -26,12 +28,14 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
@@ -40,7 +44,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {

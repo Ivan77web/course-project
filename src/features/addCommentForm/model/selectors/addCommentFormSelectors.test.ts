@@ -15,7 +15,7 @@ describe('getAddCommentFormText', () => {
     test('empty state', () => {
         const state: DeepPartial<StateSchema> = {};
 
-        expect(getAddCommentFormText(state as StateSchema)).toEqual(undefined);
+        expect(getAddCommentFormText(state as StateSchema)).toEqual('');
     });
 });
 
