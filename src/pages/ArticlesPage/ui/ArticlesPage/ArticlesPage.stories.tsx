@@ -1,15 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleView } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { ArticlesPageSchema } from 'pages/ArticlesPage/model/types/articlesPageSchema';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: 'pages/ArticlesPage',
+    title: 'pages/Articles/ArticlesPage',
     component: ArticlesPage,
     argTypes: {
         backgroundColor: { control: 'color' },
