@@ -5,8 +5,10 @@ import React, {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import cl from './Navbar.module.scss';
 
@@ -34,7 +36,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <div className={classNames(cl.navbar, {}, [className])}>
+            <header className={classNames(cl.navbar, {}, [className])}>
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Создать статью')}
+                </AppLink>
                 <Button
                     theme={ThemeButton.CLEAR_INVERTED}
                     className={cl.links}
@@ -42,7 +50,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Выйти')}
                 </Button>
-            </div>
+            </header>
         );
     }
 
