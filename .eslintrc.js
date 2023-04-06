@@ -48,7 +48,7 @@ module.exports = {
         }],
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to'],
+            ignoreAttribute: ['data-testid', 'to', 'target'],
         }],
         'arrow-body-style': 'off',
         'jsx-a11y/alt-text': 'off',

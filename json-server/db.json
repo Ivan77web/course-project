@@ -66,6 +66,12 @@
       "userId": "1",
       "text": "Hello Hello hi",
       "id": "-OWYOL-"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "СТАТЬЯ О RUBY",
+      "id": "8wRRW4E"
     }
   ],
   "users": [

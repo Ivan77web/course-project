@@ -4,8 +4,10 @@ import { getArticleDetailsError, getArticleDetailsIsLoading } from './comments';
 describe('isLoading', () => {
     test('Should return data', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                isLoading: true,
+            articlesDetailsPage: {
+                comments: {
+                    isLoading: true,
+                },
             },
         };
 
@@ -22,8 +24,10 @@ describe('isLoading', () => {
 describe('error', () => {
     test('Should return data', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                error: 'error',
+            articlesDetailsPage: {
+                comments: {
+                    error: 'error',
+                },
             },
         };
 
