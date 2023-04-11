@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { ArticleBlockType } from '../../model/types/article';
 import { ArticleTextBlockComponent } from './ArticleTextBlockComponent';
 
 export default {

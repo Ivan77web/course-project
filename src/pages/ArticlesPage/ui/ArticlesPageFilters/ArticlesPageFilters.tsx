@@ -10,9 +10,9 @@ import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'features/articleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebouce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from 'entities/Article/model/types/article';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cl from './ArticlesPageFilters.module.scss';
 import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,

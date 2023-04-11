@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
+import { ArticleBlockType } from '../../model/types/article';
 import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
 
 export default {
