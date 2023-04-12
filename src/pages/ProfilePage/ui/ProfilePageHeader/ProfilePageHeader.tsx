@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
-import cl from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -36,28 +36,26 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cl.ProfilePageHeader, {}, [className])}>
+        <HStack max justify="between" className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
 
             {
                 canEdit && (
-                    <div className={cl.btnWrapper}>
+                    <div>
                         {
                             readOnly
                                 ? (
                                     <Button
                                         onClick={onEdit}
-                                        className={cl.editBtn}
                                         theme={ThemeButton.OUTLINE}
                                     >
                                         {t('Редактировать')}
                                     </Button>
                                 )
                                 : (
-                                    <div className={cl.buttons}>
+                                    <HStack gap="8">
                                         <Button
                                             onClick={onCancelEdit}
-                                            className={cl.cancelBtn}
                                             theme={ThemeButton.OUTLINE_RED}
                                         >
                                             {t('Отменить')}
@@ -65,17 +63,16 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
                                         <Button
                                             onClick={onSave}
-                                            className={cl.saveBtn}
                                             theme={ThemeButton.OUTLINE}
                                         >
                                             {t('Сохранить')}
                                         </Button>
-                                    </div>
+                                    </HStack>
                                 )
                         }
                     </div>
                 )
             }
-        </div>
+        </HStack>
     );
 };
