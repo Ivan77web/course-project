@@ -1,0 +1,49 @@
+.listbox {
+    position: relative;
+}
+
+.options {
+    position: absolute;
+    background: var(--bg-color);
+    min-width: 100%;
+    z-index: 10000;
+    border: 1px solid var(--primary-color);
+}
+
+.optionsBottom {
+    top: calc(100% + 10px);
+}
+
+.optionsTop {
+    bottom: calc(100% + 10px);
+}
+
+.trigger {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    padding: 10px;
+}
+
+.active {
+    background: var(--primary-color);
+    color: var(--inverted-primary-color);
+}
+
+.checkIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.active .checkIcon {
+    fill: var(--inverted-primary-color);
+}
+
+.disabled {
+    opacity: 0.7;
+}
