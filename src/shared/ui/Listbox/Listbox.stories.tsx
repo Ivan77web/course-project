@@ -28,71 +28,82 @@ const defaultArgs = {
     label: 'Выберите значение',
 };
 
-// const smallArgs = {
-//     items: [
-//         { value: 'Первый вариант', content: '1' },
-//         { value: 'Второй вариант', content: '2' },
-//         { value: 'Третий вариант', content: '3' },
-//         { value: 'Четвертый вариант', content: '4' },
-//         { value: 'Пятый вариант', content: '5' },
-//     ],
-//     value: 'Второй вариант',
-//     defaultValue: 'Первый вариант',
-//     onChange: () => { },
-//     readonly: false,
-//     label: 'Выберите значение',
-// };
-
-export const NormalBottom = Template.bind({});
-NormalBottom.args = {
+export const NormalBottomLeft = Template.bind({});
+NormalBottomLeft.args = {
     ...defaultArgs,
-    direction: 'bottom',
+    direction: 'bottom left',
 };
 
-export const NormalTop = Template.bind({});
-NormalTop.args = {
+export const NormalBottomRight = Template.bind({});
+NormalBottomRight.args = {
     ...defaultArgs,
-    direction: 'top',
+    direction: 'bottom right',
 };
 
-export const DarkBottom = Template.bind({});
-DarkBottom.args = {
+export const NormalTopLeft = Template.bind({});
+NormalTopLeft.args = {
     ...defaultArgs,
-    direction: 'bottom',
+    direction: 'top left',
 };
-DarkBottom.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const DarkTop = Template.bind({});
-DarkTop.args = {
+export const NormalTopRight = Template.bind({});
+NormalTopRight.args = {
     ...defaultArgs,
-    direction: 'top',
+    direction: 'top right',
 };
-DarkTop.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const GrayBottom = Template.bind({});
-GrayBottom.args = {
+export const DarkBottomLeft = Template.bind({});
+DarkBottomLeft.args = {
     ...defaultArgs,
-    direction: 'bottom',
+    direction: 'bottom left',
 };
-GrayBottom.decorators = [ThemeDecorator(Theme.GRAY)];
+DarkBottomLeft.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const GrayTop = Template.bind({});
-GrayTop.args = {
+export const DarkBottomRight = Template.bind({});
+DarkBottomRight.args = {
     ...defaultArgs,
-    direction: 'top',
+    direction: 'bottom right',
 };
-GrayTop.decorators = [ThemeDecorator(Theme.GRAY)];
+DarkBottomRight.decorators = [ThemeDecorator(Theme.DARK)];
 
-// export const smallBottom = Template.bind({});
-// GrayBottom.args = {
-//     ...defaultArgs,
-//     direction: 'bottom',
-// };
-// GrayBottom.decorators = [ThemeDecorator(Theme.GRAY)];
+export const DarkTopLeft = Template.bind({});
+DarkTopLeft.args = {
+    ...defaultArgs,
+    direction: 'top left',
+};
+DarkTopLeft.decorators = [ThemeDecorator(Theme.DARK)];
 
-// export const smallTop = Template.bind({});
-// GrayTop.args = {
-//     ...defaultArgs,
-//     direction: 'top',
-// };
-// GrayTop.decorators = [ThemeDecorator(Theme.GRAY)];
+export const DarkTopRight = Template.bind({});
+DarkTopRight.args = {
+    ...defaultArgs,
+    direction: 'top right',
+};
+DarkTopRight.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const GrayBottomLeft = Template.bind({});
+GrayBottomLeft.args = {
+    ...defaultArgs,
+    direction: 'bottom left',
+};
+GrayBottomLeft.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const GrayBottomRight = Template.bind({});
+GrayBottomRight.args = {
+    ...defaultArgs,
+    direction: 'bottom right',
+};
+GrayBottomRight.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const GrayTopLeft = Template.bind({});
+GrayTopLeft.args = {
+    ...defaultArgs,
+    direction: 'top left',
+};
+GrayTopLeft.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const GrayTopRight = Template.bind({});
+GrayTopRight.args = {
+    ...defaultArgs,
+    direction: 'top right',
+};
+GrayTopRight.decorators = [ThemeDecorator(Theme.GRAY)];

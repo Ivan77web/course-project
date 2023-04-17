@@ -10,6 +10,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { DropDown } from 'shared/ui/DropDown/DropDown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -43,13 +45,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Button
-                    theme={ThemeButton.CLEAR_INVERTED}
-                    className={cl.links}
-                    onClick={onSignOut}
-                >
-                    {t('Выйти')}
-                </Button>
+                <DropDown
+                    direction="bottom right"
+                    className={cl.dropdown}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                    items={[
+                        {
+                            content: t('Профиль'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Выйти'),
+                            onClick: onSignOut,
+                        },
+                    ]}
+                />
             </header>
         );
     }

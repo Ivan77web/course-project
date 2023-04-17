@@ -10,14 +10,6 @@
     border: 1px solid var(--primary-color);
 }
 
-.optionsBottom {
-    top: calc(100% + 10px);
-}
-
-.optionsTop {
-    bottom: calc(100% + 10px);
-}
-
 .trigger {
     background: none;
     border: none;
@@ -46,4 +38,24 @@
 
 .disabled {
     opacity: 0.7;
+}
+
+.optionsBottomLeft {
+    top: calc(100% + 10px);
+    left: 0;
+}
+
+.optionsBottomRight {
+    top: calc(100% + 10px);
+    right: 0;
+}
+
+.optionsTopLeft {
+    bottom: calc(100% + 10px);
+    left: 0;
+}
+
+.optionsTopRight {
+    bottom: calc(100% + 10px);
+    right: 0;
 }

@@ -6,7 +6,6 @@ import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Country, CountrySelect } from 'entities/Country';
-import { useEffect } from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../model/types/profile';
 import cl from './ProfileCard.module.scss';

@@ -11,14 +11,6 @@ interface CountrySelectProps {
     readonly?: boolean;
 }
 
-const options = [
-    { value: Country.Russia, content: Country.Russia },
-    { value: Country.USA, content: Country.USA },
-    { value: Country.Ukraine, content: Country.Ukraine },
-    { value: Country.Belarus, content: Country.Belarus },
-    { value: Country.Kazakhstan, content: Country.Kazakhstan },
-];
-
 export const CountrySelect = memo((props: CountrySelectProps) => {
     const { t } = useTranslation('profile');
     const {
@@ -32,6 +24,14 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         onChange?.(value as Country);
     }, [onChange]);
 
+    const options = [
+        { value: Country.Russia, content: t(Country.Russia) },
+        { value: Country.USA, content: t(Country.USA) },
+        { value: Country.Ukraine, content: t(Country.Ukraine) },
+        { value: Country.Belarus, content: t(Country.Belarus) },
+        { value: Country.Kazakhstan, content: t(Country.Kazakhstan) },
+    ];
+
     return (
         <Listbox
             onChange={onChangeHandler}
@@ -40,7 +40,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             className={classNames('', {}, [className])}
             defaultValue={t('Ваша страна')}
             readonly={readonly}
-            direction="top"
+            direction="top right"
             label={t('Ваша страна')}
         />
     );

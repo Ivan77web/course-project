@@ -20,5 +20,11 @@
     "Некорректная валюта" : "Incorrect currency",
     "Некорректное имя/фамилия/username" : "Incorrect first name/last name/username",
     "Данные не указаны" : "Data not specified",
-    "Серверная ошибка при сохранении" : "Server error on save"
+    "Серверная ошибка при сохранении" : "Server error on save",
+    "Russia": "Russia",
+    "Ukraine": "Ukraine",
+    "Belarus": "Belarus",
+    "Armenia": "Armenia",
+    "Kazakhstan": "Kazakhstan",
+    "USA": "USA"
 }
