@@ -78,6 +78,12 @@
       "userId": "1",
       "text": "123123123",
       "id": "JcJyfi4"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "text": "scala",
+      "id": "yLaL840"
     }
   ],
   "users": [
@@ -100,10 +106,10 @@
     {
       "id": "1",
       "first": "Иван",
-      "lastname": "Шестопалов",
+      "lastname": "Шестопалов 111",
       "age": 20,
       "currency": "RUB",
-      "country": "Kazakhstan",
+      "country": "Russia",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://sun9-36.userapi.com/impg/c855220/v855220920/217645/M_4Hrk9SIZ4.jpg?size=723x1080&quality=96&sign=907eeb1184d759743dc91b92133cc94a&type=album"
