@@ -37,3 +37,13 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
         },
     },
 })];
+
+export const Gray = Template.bind({});
+Gray.args = {};
+Gray.decorators = [ThemeDecorator(Theme.GRAY), StoreDecorator({
+    scrollSave: {
+        scroll: {
+            '': 0,
+        },
+    },
+})];

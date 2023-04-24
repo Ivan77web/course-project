@@ -2,6 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Article } from 'entities/Article';
 import { ArticleType, ArticleBlockType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import ArticlesDetailsPage from './ArticlesDetailsPage';
 
 export default {
@@ -95,3 +97,25 @@ Normal.decorators = [StoreDecorator({
         data: article,
     },
 })];
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [
+    StoreDecorator({
+        articleDatails: {
+            data: article,
+        },
+    }),
+    ThemeDecorator(Theme.DARK),
+];
+
+export const Gray = Template.bind({});
+Gray.args = {};
+Gray.decorators = [
+    StoreDecorator({
+        articleDatails: {
+            data: article,
+        },
+    }),
+    ThemeDecorator(Theme.GRAY),
+];

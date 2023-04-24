@@ -1,8 +1,7 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import AdminPanelPage from './AdminPanelPage';
 
 export default {
@@ -18,5 +17,22 @@ export default {
 
 const Template: ComponentStory<typeof AdminPanelPage> = () => <AdminPanelPage />;
 
-export const Light = Template.bind({});
-Light.args = {};
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    scrollSave: {
+        scroll: {
+            '': 0,
+        },
+    },
+})];
+
+export const Gray = Template.bind({});
+Gray.args = {};
+Gray.decorators = [ThemeDecorator(Theme.GRAY), StoreDecorator({
+    scrollSave: {
+        scroll: {
+            '': 0,
+        },
+    },
+})];

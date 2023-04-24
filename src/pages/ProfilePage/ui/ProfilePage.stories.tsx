@@ -18,35 +18,74 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage />;
 
+const profileData = {
+    form: {
+        username: 'Test name',
+        first: 'Test',
+        lastname: 'Test',
+        age: 20,
+        country: Country.Russia,
+        currency: Currency.RUB,
+        city: 'Moscow',
+        avatar,
+    },
+};
+
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    profile: {
-        form: {
-            username: 'Test name',
-            first: 'Test',
-            lastname: 'Test',
-            age: 20,
-            country: Country.Russia,
-            currency: Currency.RUB,
-            city: 'Moscow',
-            avatar,
-        },
-    },
-})];
+Normal.decorators = [
+    StoreDecorator({
+        profile: profileData,
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        form: {
-            username: 'Test name',
-            first: 'Test',
-            lastname: 'Test',
-            age: 20,
-            country: Country.Russia,
-            currency: Currency.RUB,
-            avatar,
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: profileData,
+    }),
+];
+
+export const Gray = Template.bind({});
+Gray.args = {};
+Gray.decorators = [
+    ThemeDecorator(Theme.GRAY),
+    StoreDecorator({
+        profile: profileData,
+    }),
+];
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {};
+ReadOnly.decorators = [
+    ThemeDecorator(Theme.GRAY),
+    StoreDecorator({
+        profile: {
+            form: {
+                username: 'Test name',
+                first: 'Test',
+                lastname: 'Test',
+                age: 20,
+                country: Country.Russia,
+                currency: Currency.RUB,
+                city: 'Moscow',
+                avatar,
+            },
+            data: {
+                username: 'Test name',
+                first: 'Test',
+                lastname: 'Test',
+                age: 20,
+                country: Country.Russia,
+                currency: Currency.RUB,
+                city: 'Moscow',
+                avatar,
+            },
+            readonly: true,
+            error: undefined,
+            isLoading: false,
         },
-    },
-})];
+    }),
+];
