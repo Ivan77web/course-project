@@ -7,8 +7,9 @@ import {
 export {
     StoreProvider,
     createReduxStore,
-    StateSchema,
-    ReduxStoreWithManager,
-    AppDispatch,
-    ThunkConfig,
 };
+
+export type { StateSchema };
+export type { ReduxStoreWithManager };
+export type { AppDispatch };
+export type { ThunkConfig };

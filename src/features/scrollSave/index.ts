@@ -3,8 +3,9 @@ import { scrollSaveReducer, scrollSaveActions } from './model/slice/scrollSaveSl
 import { getScrollByPath } from './model/selectors/scrollSaveSelectors';
 
 export {
-    ScrollSaveSchema,
     scrollSaveReducer,
     scrollSaveActions,
     getScrollByPath,
 };
+
+export type { ScrollSaveSchema };

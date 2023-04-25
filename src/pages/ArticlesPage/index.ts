@@ -3,5 +3,6 @@ import { ArticlesDetailsPageAsync } from './ui/ArticlesPage/ArticlesPage.async';
 
 export {
     ArticlesDetailsPageAsync as ArticlesDetailsPage,
-    ArticlesPageSchema,
 };
+
+export type { ArticlesPageSchema };

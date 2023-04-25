@@ -1,7 +1,8 @@
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 import {
-    Article, ArticleView, ArticleSortField, ArticleType,
+    Article,
 } from './model/types/article';
+import { ArticleView, ArticleSortField, ArticleType } from './model/consts/consts';
 import { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 import { getArticleDetailsData } from './model/selectors/articleDetails';
 import { ArticleList } from './ui/ArticleList/ArticleList';
@@ -10,8 +11,6 @@ import { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export {
     ArticleDetails,
-    Article,
-    ArticleDetailsSchema,
     getArticleDetailsData,
     ArticleView,
     ArticleList,
@@ -20,3 +19,6 @@ export {
     ArticleType,
     ArticleTypeTabs,
 };
+
+export type { Article };
+export type { ArticleDetailsSchema };
