@@ -1,0 +1,10 @@
+.panel {
+    position: absolute;
+    z-index: 10000;
+    flex-direction: column;
+    display: flex;
+    padding: 15px;
+    background: var(--bg-color);
+    border: 1px solid var(--inverted-bg-color);
+    border-radius: 10px;
+}
