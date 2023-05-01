@@ -6,6 +6,7 @@ import React, {
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import cl from './Modal.module.scss';
+import { Overlay } from '../Overlay/Overlay';
 
 interface ModalProps {
     className?: string;
@@ -48,10 +49,6 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
 
-    const onContentlick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
-
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
@@ -82,13 +79,9 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cl.Modal, mods, [className, theme, 'app_modal'])}>
-                <div className={cl.overlay} onClick={closeHandler}>
-                    <div
-                        className={cl.content}
-                        onClick={onContentlick}
-                    >
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div className={cl.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
