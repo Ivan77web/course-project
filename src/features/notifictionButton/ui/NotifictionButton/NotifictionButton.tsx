@@ -1,5 +1,5 @@
 import {
-    memo, useCallback, useEffect, useState,
+    memo, useCallback, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Popover } from 'shared/ui/Popups';
@@ -9,6 +9,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import NotificationIcon from 'shared/assets/icons/notifications.svg';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import cl from './NotifictionButton.module.scss';
 
 interface NotifictionButtonProps {
@@ -45,9 +46,11 @@ export const NotifictionButton = memo((props: NotifictionButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                    <NotificationsList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                        <NotificationsList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
         </div>
     );
