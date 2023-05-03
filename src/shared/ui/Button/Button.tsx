@@ -11,7 +11,7 @@ export enum ThemeButton {
     BACKGROUND_INVERTED = 'background_inverted',
 }
 
-export enum ButtonSize{
+export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',
@@ -23,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    fullWidth?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -33,12 +34,14 @@ export const Button = memo((props: ButtonProps) => {
         square,
         size = ButtonSize.M,
         disabled,
+        fullWidth,
         ...otherProps
     } = props;
 
     const mods: Mods = {
         [cl.square]: square,
         [cl.disabled]: disabled,
+        [cl.fullWidth]: fullWidth,
     };
 
     return (
