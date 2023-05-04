@@ -118,6 +118,12 @@
       "userId": "1",
       "text": "scala",
       "id": "yLaL840"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "34234324234",
+      "id": "3p9tz_O"
     }
   ],
   "users": [
@@ -669,6 +675,59 @@
           ]
         }
       ]
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "7"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 2,
+      "feedback": "12313233",
+      "id": "rpJZ8h_"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 5,
+      "feedback": "qweqweqweqwe",
+      "id": "i9j0sBG"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 3,
+      "feedback": "",
+      "id": "3Kx3gE5"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }
