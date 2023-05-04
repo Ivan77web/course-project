@@ -719,6 +719,27 @@
       "rate": 3,
       "feedback": "",
       "id": "7yzABC1"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 1,
+      "feedback": "Не понравилось",
+      "id": "0Qszj_F"
+    },
+    {
+      "userId": "2",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "-kGKco7"
+    },
+    {
+      "userId": "2",
+      "articleId": "6",
+      "rate": 1,
+      "feedback": "",
+      "id": "xs_waNZ"
     }
   ],
   "profile-ratings": [

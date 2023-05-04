@@ -101,3 +101,9 @@ Disabled.args = {
     size: ButtonSize.XL,
     disabled: true,
 };
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+    children: 'Text',
+    fullWidth: true,
+};

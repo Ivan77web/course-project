@@ -120,7 +120,6 @@ BigGray.decorators = [ThemeDecorator(Theme.GRAY)];
 export const BigNormalIsLoading = Template.bind({});
 BigNormalIsLoading.args = {
     isLoading: true,
-    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
 BigNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
@@ -128,7 +127,6 @@ BigNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
 export const BigDarkIsLoading = Template.bind({});
 BigDarkIsLoading.args = {
     isLoading: true,
-    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
 BigDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
@@ -136,7 +134,6 @@ BigDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
 export const BigGrayIsLoading = Template.bind({});
 BigGrayIsLoading.args = {
     isLoading: true,
-    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
 BigGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];
@@ -168,7 +165,6 @@ SmallGray.decorators = [ThemeDecorator(Theme.GRAY)];
 export const SmallNormalIsLoading = Template.bind({});
 SmallNormalIsLoading.args = {
     isLoading: true,
-    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
 SmallNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
@@ -176,7 +172,6 @@ SmallNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
 export const SmallDarkIsLoading = Template.bind({});
 SmallDarkIsLoading.args = {
     isLoading: true,
-    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
 SmallDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
@@ -184,7 +179,6 @@ SmallDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
 export const SmallGrayIsLoading = Template.bind({});
 SmallGrayIsLoading.args = {
     isLoading: true,
-    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
 SmallGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];

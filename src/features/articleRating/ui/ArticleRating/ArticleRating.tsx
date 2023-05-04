@@ -54,6 +54,8 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
     const rating = data?.[0];
 
+    console.log(rating);
+
     return (
         <RatingCard
             className={classNames('', {}, [className])}
