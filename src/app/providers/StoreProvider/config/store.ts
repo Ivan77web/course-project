@@ -1,7 +1,6 @@
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { counterReducer } from '@/entities/Counter/model/slice/CounterSlice';
 import { userReducer } from '@/entities/User';
 import { scrollSaveReducer } from '@/features/scrollSave';
 import { $api } from '@/shared/api/api';
@@ -15,7 +14,6 @@ export function createReduxStore(
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
-        counter: counterReducer,
         user: userReducer,
         scrollSave: scrollSaveReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,

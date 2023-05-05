@@ -9,7 +9,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Card } from '@/shared/ui/Card/Card';
 import { Input } from '@/shared/ui/Input/Input';
-import { ArticleSortSelector } from '@/features/articleSortSelector/ArticleSortSelector';
+import { ArticleSortSelector } from '@/features/articleSortSelector';
 import { SortOrder } from '@/shared/types';
 import { useDebouce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
