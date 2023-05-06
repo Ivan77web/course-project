@@ -75,7 +75,13 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'ivan-project-plugin/path-checker': ['error', { alias: '@' }],
-        'ivan-project-plugin/public-api-imports': ['error', { alias: '@' }],
+        'ivan-project-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
