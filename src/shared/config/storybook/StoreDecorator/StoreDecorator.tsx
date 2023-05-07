@@ -1,9 +1,8 @@
-/* eslint-disable ivan-project-plugin/public-api-imports */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { ArticleDetailsReducer } from '@/entities/Article/model/slice/ArticleDetailsSlice';
+import { ArticleDetailsReducer } from '@/entities/Article/testing';
 import { addCommentFormReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
-import { loginReducer } from '@/features/AuthByUserName/model/slice/loginSlice';
+import { loginReducer } from '@/features/AuthByUserName/testing';
 import { profileReducer } from '@/features/editableProfileCard';
 import { articlesDetailsPageReducer } from '@/pages/ArticlesDetailsPage/model/slices';
 import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
