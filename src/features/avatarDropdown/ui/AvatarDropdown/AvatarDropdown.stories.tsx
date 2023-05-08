@@ -3,7 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { UserRole } from '@/entities/User';
 import avatar from '@/shared/assets/tests/avatarForStorybook.jpeg';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { AvatarDropdown } from './AvatarDropdown';
 
 export default {

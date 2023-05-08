@@ -1,10 +1,11 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { ArticleDetailsReducer } from '@/entities/Article/testing';
-import { addCommentFormReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUserName/testing';
-import { profileReducer } from '@/features/editableProfileCard';
-import { articlesDetailsPageReducer } from '@/pages/ArticlesDetailsPage/model/slices';
+import { profileReducer } from '@/features/editableProfileCard/testing';
+import { articlesDetailsPageReducer } from '@/pages/ArticlesDetailsPage/testing';
+// eslint-disable-next-line ivan-project-plugin/layer-imports, ivan-project-plugin/public-api-imports
 import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
