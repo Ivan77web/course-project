@@ -1,5 +1,5 @@
 import {
-    memo, useCallback, useEffect, useState,
+    memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
