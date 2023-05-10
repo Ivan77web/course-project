@@ -7,7 +7,7 @@ import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
 import {
     Article, ArticleTextBlock,
@@ -71,7 +71,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     }
                     <div className={cl.footer}>
                         <AppLink
-                            to={RoutePath.article_details + article.id}
+                            to={getRouteArticleDetails(article.id)}
                             target={target}
                         >
                             <Button theme={ThemeButton.OUTLINE}>
@@ -89,7 +89,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         <AppLink
             target={target}
             className={classNames(cl.articleListItem, {}, [className, cl[view]])}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
         >
             <Card className={cl.card}>
                 <div className={cl.imageWrapper}>
