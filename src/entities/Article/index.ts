@@ -8,18 +8,14 @@ import {
 import { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 import { getArticleDetailsData, getArticleDetailsIsLoading } from './model/selectors/articleDetails';
 import { ArticleList } from './ui/ArticleList/ArticleList';
-import { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
-import { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export {
     ArticleDetails,
     getArticleDetailsData,
     ArticleView,
     ArticleList,
-    ArticleViewSelector,
     ArticleSortField,
     ArticleType,
-    ArticleTypeTabs,
     ArticleBlockType,
     getArticleDetailsIsLoading,
 };

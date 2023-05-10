@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleType } from '../../model/consts/consts';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { ArticleType } from '@/entities/Article';
 
 export default {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'features/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
     argTypes: {
         backgroundColor: { control: 'color' },
