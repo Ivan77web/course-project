@@ -91,6 +91,7 @@ module.exports = {
             },
         ],
         'unused-imports/no-unused-imports': 'error',
+        'react/destructuring-assignment': 'off',
     },
     globals: {
         __IS_DEV__: true,
