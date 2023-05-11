@@ -15,6 +15,8 @@ import {
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import cl from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -45,7 +47,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <Icon Svg={EyeIcon} />
         </>
     );
-    const img = <img alt={article.title} src={article.img} className={cl.img} />;
 
     if (view === ArticleView.BIG) {
         const textBlock = article.blocks.find(
@@ -63,7 +64,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
                     <Text title={article.title} className={cl.title} />
                     {types}
-                    {img}
+                    <AppImage
+                        alt={article.title}
+                        src={article.img}
+                        className={cl.img}
+                        fallback={<Skeleton width="100%" height={250} />}
+                    />
                     {
                         textBlock && (
                             <ArticleTextBlockComponent block={textBlock} className={cl.textBlock} />
@@ -93,7 +99,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         >
             <Card className={cl.card}>
                 <div className={cl.imageWrapper}>
-                    {img}
+                    <AppImage
+                        alt={article.title}
+                        src={article.img}
+                        className={cl.img}
+                        fallback={<Skeleton width={200} height={200} />}
+                        errorFallback={<Skeleton width={200} height={200} />}
+                    />
                     <Text text={article.createdAt} className={cl.date} />
                 </div>
 
