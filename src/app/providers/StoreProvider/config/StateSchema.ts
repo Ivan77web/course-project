@@ -11,8 +11,10 @@ import { ScrollSaveSchema } from '@/features/scrollSave';
 import { ArticleDetailsPageSchema } from '@/pages/ArticlesDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { CounterSchema } from '@/entities/Counter';
 
 export interface StateSchema {
+    counter: CounterSchema;
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
