@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -23,9 +24,11 @@ const reducers: ReducersList = {
 const ArticlesDetailsPage: FC<ArticlesDetailsPageProps> = (props) => {
     const { className } = props;
     const { id } = useParams<{ id: string }>();
+    const articleId = __PROJECT__ !== 'storybook' ? id : '1';
+    const { t } = useTranslation('article');
 
-    if (!id) {
-        return null;
+    if (!articleId) {
+        return <div className={classNames('', {}, [className])}>{t('Статья не найдена')}</div>;
     }
 
     return (
@@ -33,10 +36,10 @@ const ArticlesDetailsPage: FC<ArticlesDetailsPageProps> = (props) => {
             <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
                 <VStack gap="16" max>
                     <ArticlesDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    <ArticleDetails id={articleId} />
+                    <ArticleRating articleId={articleId} />
                     <ArticleRecommendationsList />
-                    <ArticleDetailsComments id={id} />
+                    <ArticleDetailsComments id={articleId} />
                 </VStack>
             </Page>
         </DynamicModuleLoader>

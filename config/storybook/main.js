@@ -13,6 +13,7 @@ module.exports = {
         '@storybook/addon-interactions',
         'storybook-addon-mock/register',
         'storybook-addon-themes',
+        'storybook-addon-react-router-v6',
     ],
     framework: '@storybook/react',
     core: {
