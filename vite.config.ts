@@ -8,6 +8,9 @@ export default defineConfig({
         svgr({ exportAsDefault: true }),
         react(),
     ],
+    server: {
+        port: 3000, host: '127.0.0.1',
+    },
     resolve: {
         alias: [
             { find: '@', replacement: '/src' },

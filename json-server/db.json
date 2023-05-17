@@ -124,6 +124,18 @@
       "userId": "1",
       "text": "34234324234",
       "id": "3p9tz_O"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "фывфывфывфывфыв",
+      "id": "pLFQYou"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "фывфывфывфыв",
+      "id": "uf41w3A"
     }
   ],
   "users": [
@@ -176,6 +188,17 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "qweqweqwe",
+      "avatar": "https://sun1-87.userapi.com/impg/tRxej3Q1HTz4NAgsFDR2nlFni-I4PYgQqhiV3w/VI2RqkRijKE.jpg?size=960x960&quality=95&sign=79f905338520287eb55a728d93e1c100&type=album"
+    },
+    {
+      "id": "3",
+      "first": "TEST",
+      "lastname": "TEST",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://sun1-87.userapi.com/impg/tRxej3Q1HTz4NAgsFDR2nlFni-I4PYgQqhiV3w/VI2RqkRijKE.jpg?size=960x960&quality=95&sign=79f905338520287eb55a728d93e1c100&type=album"
     }
   ],

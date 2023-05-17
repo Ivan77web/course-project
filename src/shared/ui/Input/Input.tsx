@@ -125,7 +125,7 @@ export const Input = memo((props: InputProps) => {
 
     return (
         <div className={classNames(cl.InputWrapper, {}, [className])}>
-            {placeholder && (
+            {/* {placeholder && (
                 <div className={cl.placeholder}>
                     {`${placeholder}>`}
                 </div>
@@ -159,7 +159,20 @@ export const Input = memo((props: InputProps) => {
                             : ''
                     }
                 </div>
-            </div>
+            </div> */}
+
+            <input
+                ref={refInput}
+                type={type}
+                value={value}
+                onChange={onChangeHundler}
+                className={cl.input}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                onSelect={onSelect}
+                readOnly={readOnly}
+                {...otherProps}
+            />
         </div>
     );
 });
