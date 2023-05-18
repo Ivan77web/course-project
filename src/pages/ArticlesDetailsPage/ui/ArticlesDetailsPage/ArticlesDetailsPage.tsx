@@ -12,6 +12,8 @@ import { articlesDetailsPageReducer } from '../../model/slices';
 import { ArticlesDetailsPageHeader } from '../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlags } from '@/shared/lib/features';
+import { Counter } from '@/entities/Counter';
 
 interface ArticlesDetailsPageProps {
     className?: string;
@@ -26,6 +28,8 @@ const ArticlesDetailsPage: FC<ArticlesDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const articleId = __PROJECT__ !== 'storybook' ? id : '1';
     const { t } = useTranslation('article');
+    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
+    const isCounterEnabled = getFeatureFlags('isCounterEnabled');
 
     if (!articleId) {
         return <div className={classNames('', {}, [className])}>{t('Статья не найдена')}</div>;
@@ -37,7 +41,8 @@ const ArticlesDetailsPage: FC<ArticlesDetailsPageProps> = (props) => {
                 <VStack gap="16" max>
                     <ArticlesDetailsPageHeader />
                     <ArticleDetails id={articleId} />
-                    <ArticleRating articleId={articleId} />
+                    {isArticleRatingEnabled && <ArticleRating articleId={articleId} />}
+                    {isCounterEnabled && <Counter />}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={articleId} />
                 </VStack>
