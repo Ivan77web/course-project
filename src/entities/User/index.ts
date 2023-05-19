@@ -5,6 +5,7 @@ import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthDa
 import { getUserInit } from './model/selectors/getUserInit/getUserInit';
 import { isUserAdmin, isUserManager, getUserRole } from './model/selectors/roleSelectors';
 import { useJsonSettings } from './model/selectors/jsonSettings';
+import { initAuthData } from './model/services/initAuthData';
 import { saveJsonSettings } from './model/services/saveJsonSettings';
 
 export {
@@ -18,6 +19,7 @@ export {
     getUserRole,
     useJsonSettings,
     saveJsonSettings,
+    initAuthData,
 };
 
 export type { User };

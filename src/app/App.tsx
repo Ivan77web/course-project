@@ -5,9 +5,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { getUserInit, userActions } from '@/entities/User';
+import { getUserInit, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppRouter } from './providers/router';
+import { PageLoader } from '@/widgets/PageLoader';
 
 const App = () => {
     const { theme } = useTheme();
@@ -15,8 +16,14 @@ const App = () => {
     const inited = useSelector(getUserInit);
 
     useEffect(() => {
-        dispatch(userActions.initAuthUser());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!inited) {
+        return (
+            <PageLoader />
+        );
+    }
 
     return (
         <div className={classNames('app', {}, [theme])}>

@@ -1,11 +1,11 @@
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button';
 import { useCounterActions } from '../model/slice/counterSlice';
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export const Counter = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const counterValue = useCounterValue();
     const { t } = useTranslation();
     const { add, decrement, increment } = useCounterActions();
