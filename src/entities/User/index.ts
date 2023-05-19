@@ -1,9 +1,11 @@
-import { userActions, userReducer } from './modal/slice/userSlice';
-import { User, UserSchema } from './modal/types/user';
-import { UserRole } from './modal/consts/consts';
-import { getUserAuthData } from './modal/selectors/getUserAuthData/getUserAuthData';
-import { getUserInit } from './modal/selectors/getUserInit/getUserInit';
-import { isUserAdmin, isUserManager, getUserRole } from './modal/selectors/roleSelectors';
+import { userActions, userReducer } from './model/slice/userSlice';
+import { User, UserSchema } from './model/types/user';
+import { UserRole } from './model/consts/consts';
+import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
+import { getUserInit } from './model/selectors/getUserInit/getUserInit';
+import { isUserAdmin, isUserManager, getUserRole } from './model/selectors/roleSelectors';
+import { useJsonSettings } from './model/selectors/jsonSettings';
+import { saveJsonSettings } from './model/services/saveJsonSettings';
 
 export {
     userReducer,
@@ -14,6 +16,8 @@ export {
     isUserManager,
     UserRole,
     getUserRole,
+    useJsonSettings,
+    saveJsonSettings,
 };
 
 export type { User };
