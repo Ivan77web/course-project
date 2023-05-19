@@ -13,15 +13,16 @@
 
 .input {
     background: transparent;
-    border: none;
     outline: none;
     width: 100%;
     color: transparent;
     text-shadow: 0 0 0 var(--primary-color);
+    border: 1px solid black;
 
-    &:focus {
-        outline: none;
-    }
+    // border: none;
+    // &:focus {
+    //     outline: none;
+    // }
 }
 
 .caret {

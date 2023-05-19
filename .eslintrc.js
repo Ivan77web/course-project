@@ -61,6 +61,7 @@ module.exports = {
                 'role',
                 'as',
                 'border',
+                'feature',
             ],
         }],
         'arrow-body-style': 'off',

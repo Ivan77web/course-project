@@ -12,7 +12,7 @@ import { articlesDetailsPageReducer } from '../../model/slices';
 import { ArticlesDetailsPageHeader } from '../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { toggleFeatures, getFeatureFlags } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 
 interface ArticlesDetailsPageProps {
@@ -28,18 +28,10 @@ const ArticlesDetailsPage: FC<ArticlesDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const articleId = __PROJECT__ !== 'storybook' ? id : '1';
     const { t } = useTranslation('article');
-    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
-    const isCounterEnabled = getFeatureFlags('isCounterEnabled');
 
     if (!articleId) {
         return <div className={classNames('', {}, [className])}>{t('Статья не найдена')}</div>;
     }
-
-    const articleRatingCard = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating articleId={articleId} />,
-        off: () => <Card max>{t('Оценка статей скоро появится')}</Card>,
-    });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -47,7 +39,11 @@ const ArticlesDetailsPage: FC<ArticlesDetailsPageProps> = (props) => {
                 <VStack gap="16" max>
                     <ArticlesDetailsPageHeader />
                     <ArticleDetails id={articleId} />
-                    {articleRatingCard}
+                    <ToggleFeatures
+                        feature="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={articleId} />}
+                        off={<Card max>{t('Оценка статей скоро появится')}</Card>}
+                    />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={articleId} />
                 </VStack>
