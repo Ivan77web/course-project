@@ -3,20 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { LoginModal } from '@/features/AuthByUserName';
 import { getUserAuthData } from '@/entities/User';
-import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { NotifictionButton } from '@/features/notifictionButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import cl from './Navbar.module.scss';
+import cl from './NavbarRedesigned.module.scss';
 
 interface NavbarProps {
     className?: string
 }
 
-export const Navbar = memo(({ className }: NavbarProps) => {
+export const NavbarRedesigned = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation('navbar');
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
@@ -32,12 +30,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cl.navbar, {}, [className])}>
-                <AppLink
-                    to={getRouteArticleCreate()}
-                    theme={AppLinkTheme.SECONDARY}
-                >
-                    {t('Создать статью')}
-                </AppLink>
                 <HStack gap="16" className={cl.actions}>
                     <NotifictionButton />
                     <AvatarDropdown />

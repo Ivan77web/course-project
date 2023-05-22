@@ -11,6 +11,7 @@ import { UseInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfin
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cl from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -39,6 +40,12 @@ export const Page = (props: PageProps) => {
         }));
     }, 500);
 
+    const classes = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => cl.pageRedesigned,
+        off: () => cl.page,
+    });
+
     useLayoutEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;
     });
@@ -46,7 +53,7 @@ export const Page = (props: PageProps) => {
     return (
         <main
             ref={wrapperRef}
-            className={classNames(cl.page, {}, [className])}
+            className={classNames(classes, {}, [className])}
             onScroll={onScroll}
             data-testid={props['data-testid'] ?? 'Page'}
         >

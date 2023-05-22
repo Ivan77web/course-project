@@ -148,11 +148,12 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "avatar": "111https://sun9-36.userapi.com/impg/c855220/v855220920/217645/M_4Hrk9SIZ4.jpg?size=723x1080&quality=96&sign=907eeb1184d759743dc91b92133cc94a&type=album",
       "jsonSettings": {
-        "theme": "app_gray_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsageHasBeenOpen": false,
         "isArticlePageWasOpened": true

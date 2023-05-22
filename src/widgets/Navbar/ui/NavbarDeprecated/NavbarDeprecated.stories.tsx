@@ -3,17 +3,17 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { UserRole } from '@/entities/User';
-import { Navbar } from './Navbar';
+import { NavbarDeprecated } from './NavbarDeprecated';
 
 export default {
-    title: 'widget/Navbar',
-    component: Navbar,
+    title: 'widget/Navbar/NavbarDeprecated',
+    component: NavbarDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof Navbar>;
+} as ComponentMeta<typeof NavbarDeprecated>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: ComponentStory<typeof NavbarDeprecated> = (args) => <NavbarDeprecated {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
