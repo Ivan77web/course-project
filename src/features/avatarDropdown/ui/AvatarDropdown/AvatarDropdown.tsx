@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
-import { Avatar } from '@/shared/ui/Avatar';
-import { DropDown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { DropDown } from '@/shared/ui/deprecated/Popups';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
