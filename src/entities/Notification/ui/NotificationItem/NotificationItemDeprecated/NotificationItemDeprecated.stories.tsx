@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { NotificationItem } from './NotificationItem';
+import { NotificationItemDeprecated } from './NotificationItemDeprecated';
 
 export default {
-    title: 'entities/Notifications/NotificationItem',
-    component: NotificationItem,
+    title: 'entities/Notifications/NotificationItem/NotificationItemDeprecated',
+    component: NotificationItemDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -16,9 +16,9 @@ export default {
             description: 'first second',
         },
     },
-} as ComponentMeta<typeof NotificationItem>;
+} as ComponentMeta<typeof NotificationItemDeprecated>;
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+const Template: ComponentStory<typeof NotificationItemDeprecated> = (args) => <NotificationItemDeprecated {...args} />;
 
 export const Normal = Template.bind({});
 

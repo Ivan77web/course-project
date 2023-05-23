@@ -2,11 +2,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import { NotificationsList } from './NotificationsList';
+import { NotificationsListDeprecated } from './NotificationsListDeprecated';
 
 export default {
-    title: 'entities/Notifications/NotificationsList',
-    component: NotificationsList,
+    title: 'entities/Notifications/NotificationsList/NotificationsListDeprecated',
+    component: NotificationsListDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -43,9 +43,9 @@ export default {
             },
         ],
     },
-} as ComponentMeta<typeof NotificationsList>;
+} as ComponentMeta<typeof NotificationsListDeprecated>;
 
-const Template: ComponentStory<typeof NotificationsList> = (args) => <NotificationsList {...args} />;
+const Template: ComponentStory<typeof NotificationsListDeprecated> = (args) => <NotificationsListDeprecated {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

@@ -1,42 +1,18 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { useNotifications } from '../../api/notificationApi';
-import cl from './NotificationsList.module.scss';
-import { NotificationItem } from '../NotificationItem/NotificationItem';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { NotificationsListRedesigned } from './NotificationsListRedesigned/NotificationsListRedesigned';
+import { NotificationsListDeprecated } from './NotificationsListDeprecated/NotificationsListDeprecated';
 
 interface NotificationsListProps {
     className?: string;
 }
 
 export const NotificationsList = memo((props: NotificationsListProps) => {
-    const { className } = props;
-    const { data, isLoading } = useNotifications(null, {
-        pollingInterval: 5000,
-    });
-
-    if (isLoading) {
-        return (
-            <VStack
-                className={classNames(cl.notificationsList, {}, [className])}
-                gap="16"
-                max
-            >
-                <Skeleton width="100%" border="8px" height="80px" />
-                <Skeleton width="100%" border="8px" height="80px" />
-                <Skeleton width="100%" border="8px" height="80px" />
-            </VStack>
-        );
-    }
-
     return (
-        <VStack
-            className={classNames(cl.notificationsList, {}, [className])}
-            gap="16"
-            max
-        >
-            {data?.map((item) => <NotificationItem item={item} key={item.id} />)}
-        </VStack>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<NotificationsListRedesigned {...props} />}
+            off={<NotificationsListDeprecated {...props} />}
+        />
     );
 });

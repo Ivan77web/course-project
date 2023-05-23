@@ -1,9 +1,8 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card, CardTheme } from '@/shared/ui/deprecated/Card';
-import { Text } from '@/shared/ui/deprecated/Text';
-import cl from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { NotificationItemRedesigned } from './NotificationItemRedesigned/NotificationItemRedesigned';
+import { NotificationItemDeprecated } from './NotificationItemDeprecated/NotificationItemDeprecated';
 
 interface NotificationItemProps {
     className?: string;
@@ -11,27 +10,11 @@ interface NotificationItemProps {
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-    const { className, item } = props;
-
-    const content = (
-        <Card
-            theme={CardTheme.OUTLINED}
-            className={classNames(cl.notificationItem, {}, [className])}
-        >
-            <Text
-                title={item.title}
-                text={item.description}
-            />
-        </Card>
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<NotificationItemRedesigned {...props} />}
+            off={<NotificationItemDeprecated {...props} />}
+        />
     );
-
-    if (item.href) {
-        return (
-            <a className={cl.Link} target="_blank" href={item.href} rel="noreferrer">
-                {content}
-            </a>
-        );
-    }
-
-    return content;
 });

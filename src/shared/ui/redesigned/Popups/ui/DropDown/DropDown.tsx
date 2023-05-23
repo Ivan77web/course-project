@@ -4,7 +4,7 @@ import { Menu } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import cl from './DropDown.module.scss';
-import { AppLink } from '../../../AppLink/AppLink';
+import { AppLink } from '../../../../deprecated/AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCl from '../../styles/popup.module.scss';
 
@@ -31,7 +31,7 @@ export const DropDown = memo((props: DropDownProps) => {
     } = props;
     const { t } = useTranslation();
 
-    const menuClasses = [mapDirectionClass[direction]];
+    const menuClasses = [mapDirectionClass[direction], popupCl.menu];
 
     return (
         <Menu as="div" className={classNames(cl.dropDown, {}, [className, popupCl.popup])}>
