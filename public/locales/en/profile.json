@@ -27,5 +27,11 @@
     "Armenia": "Armenia",
     "Kazakhstan": "Kazakhstan",
     "USA": "USA",
-    "Профиль не найден": "Profile not found"
+    "Профиль не найден": "Profile not found",
+    "Имя":"Name",
+    "Фамилия":"Firstname",
+    "Username":"Username",
+    "Возраст":"Age",
+    "Город":"City",
+    "Ссылка аватар":"Link to avatar"
 }

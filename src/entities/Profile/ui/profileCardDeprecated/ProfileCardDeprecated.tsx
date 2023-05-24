@@ -7,8 +7,8 @@ import { Loader } from '@/shared/ui/deprecated/Loader';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
-import { Profile } from '../model/types/profile';
-import cl from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
+import cl from './ProfileCardDeprecated.module.scss';
 
 interface ProfileCardProps {
     className?: string;
@@ -26,7 +26,7 @@ interface ProfileCardProps {
     readOnly?: boolean;
 }
 
-export const ProfileCard = (props: ProfileCardProps) => {
+export const ProfileCardDeprecated = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     const {
         className,
