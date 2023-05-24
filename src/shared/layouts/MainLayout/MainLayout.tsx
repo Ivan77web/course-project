@@ -25,7 +25,7 @@ export const MainLayout = memo((props: MainLayoutProps) => {
         <div className={classNames(cl.mainLayout, {}, [className])}>
             <div className={cl.sidebar}>{sidebar}</div>
             <div className={cl.content}>{content}</div>
-            <div className={cl.toolbar}>
+            <div className={cl.rightbar}>
                 <div className={cl.header}>{header}</div>
                 <div className={cl.toolbar}>{rightbar}</div>
             </div>

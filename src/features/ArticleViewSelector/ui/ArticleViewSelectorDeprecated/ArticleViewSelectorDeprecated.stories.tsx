@@ -1,17 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ArticleViewSelector } from './ArticleViewSelector';
+import { ArticleViewSelectorDeprecated } from './ArticleViewSelectorDeprecated';
 
 export default {
-    title: 'features/Article/ArticleViewSelector',
-    component: ArticleViewSelector,
+    title: 'features/Article/ArticleViewSelector/ArticleViewSelectorDeprecated',
+    component: ArticleViewSelectorDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleViewSelector>;
+} as ComponentMeta<typeof ArticleViewSelectorDeprecated>;
 
-const Template: ComponentStory<typeof ArticleViewSelector> = (args) => <ArticleViewSelector {...args} />;
+const Template: ComponentStory<typeof ArticleViewSelectorDeprecated> = (args) => <ArticleViewSelectorDeprecated {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

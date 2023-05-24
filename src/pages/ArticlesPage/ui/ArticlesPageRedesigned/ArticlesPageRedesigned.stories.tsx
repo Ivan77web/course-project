@@ -3,11 +3,11 @@ import { Theme } from '@/shared/const/theme';
 import { ArticleView, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import ArticlesPage from './ArticlesPage';
+import ArticlesPageRedesigned from './ArticlesPageRedesigned';
 
 export default {
-    title: 'pages/Articles/ArticlesPage',
-    component: ArticlesPage,
+    title: 'pages/Articles/ArticlesPage/ArticlesPageRedesigned',
+    component: ArticlesPageRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -141,9 +141,9 @@ export default {
             },
         }),
     ],
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticlesPageRedesigned>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
+const Template: ComponentStory<typeof ArticlesPageRedesigned> = (args) => <ArticlesPageRedesigned {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

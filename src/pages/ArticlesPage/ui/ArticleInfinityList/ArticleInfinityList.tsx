@@ -10,7 +10,6 @@ import {
     getArticlePageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import cl from './ArticleInfinityList.module.scss';
 
 interface ArticleInfinityListProps {
     className?: string;
@@ -33,7 +32,7 @@ export const ArticleInfinityList = memo((props: ArticleInfinityListProps) => {
             isLoading={isLoading}
             view={view}
             articles={articles}
-            className={classNames(cl.list, {}, [className])}
+            className={classNames('', {}, [className])}
         />
     );
 });

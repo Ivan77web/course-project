@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextSize, TextTheme } from './Text';
+import { Text } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -52,33 +52,33 @@ TitleWithTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const ErrorTitle = Template.bind({});
 ErrorTitle.args = {
     title: 'Title lorem ipsum',
-    theme: TextTheme.ERROR,
+    variant: 'error',
 };
 
 export const ErrorText = Template.bind({});
 ErrorText.args = {
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
+    variant: 'error',
 };
 
 export const ErrorTitleWithText = Template.bind({});
 ErrorTitleWithText.args = {
     title: 'Title lorem ipsum',
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
+    variant: 'error',
 };
 
 export const ErrorTitleDark = Template.bind({});
 ErrorTitleDark.args = {
     title: 'Title lorem ipsum',
-    theme: TextTheme.ERROR,
+    variant: 'error',
 };
 ErrorTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const ErrorTextDark = Template.bind({});
 ErrorTextDark.args = {
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
+    variant: 'error',
 };
 ErrorTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -86,7 +86,7 @@ export const ErrorTitleWithTextDark = Template.bind({});
 ErrorTitleWithTextDark.args = {
     title: 'Title lorem ipsum',
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
+    variant: 'error',
 };
 ErrorTitleWithTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -94,19 +94,19 @@ export const SizeS = Template.bind({});
 SizeS.args = {
     title: 'Title lorem ipsum',
     text: 'Text lorem ipsum',
-    size: TextSize.S,
+    size: 's',
 };
 
 export const SizeM = Template.bind({});
 SizeM.args = {
     title: 'Title lorem ipsum',
     text: 'Text lorem ipsum',
-    size: TextSize.M,
+    size: 'm',
 };
 
 export const SizeL = Template.bind({});
 SizeL.args = {
     title: 'Title lorem ipsum',
     text: 'Text lorem ipsum',
-    size: TextSize.L,
+    size: 'l',
 };

@@ -7,7 +7,7 @@ import { getScrollByPath, scrollSaveActions } from '@/features/scrollSave';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { UseInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cl from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
@@ -27,9 +27,13 @@ export const Page = (props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname));
 
-    UseInfiniteScroll({
-        wrapperRef,
+    useInfiniteScroll({
         triggerRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 
