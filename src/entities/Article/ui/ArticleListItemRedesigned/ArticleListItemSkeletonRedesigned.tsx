@@ -4,6 +4,7 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { ArticleView } from '../../model/consts/consts';
 import cl from './ArticleListItemRedesigned.module.scss';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListItemSkeletonProps {
     className?: string;
@@ -18,18 +19,25 @@ export const ArticleListItemSkeletonRedesigned = memo((props: ArticleListItemSke
         return (
             <div className={classNames(cl.articleListItem, {}, [className, cl[view]])}>
                 <Card className={cl.card}>
-                    <div className={cl.header}>
-                        <Skeleton width={30} height={30} border="50%" />
-                        <Skeleton width={150} height={16} className={cl.username} />
-                        <Skeleton width={150} height={16} className={cl.date} />
-                    </div>
+                    <VStack gap="16">
+                        <HStack gap="8">
+                            <Skeleton width={32} height={32} border="50%" />
+                            <Skeleton width={150} height={24} className={cl.username} />
+                        </HStack>
 
-                    <Skeleton width={250} height={24} className={cl.title} />
-                    <Skeleton height={200} className={cl.img} />
+                        <Skeleton width={200} height={24} />
 
-                    <div className={cl.footer}>
-                        <Skeleton width={200} height={36} />
-                    </div>
+                        <Skeleton width={300} height={24} />
+
+                        <Skeleton width="100%" height={350} />
+
+                        <Skeleton width="100%" height={70} />
+
+                        <HStack max justify="between">
+                            <Skeleton width={150} height={40} border="50px" />
+                            <Skeleton width={70} height={40} className={cl.username} />
+                        </HStack>
+                    </VStack>
                 </Card>
             </div>
         );
@@ -38,15 +46,22 @@ export const ArticleListItemSkeletonRedesigned = memo((props: ArticleListItemSke
     return (
         <div className={classNames(cl.articleListItem, {}, [className, cl[view]])}>
             <Card className={cl.card}>
-                <div className={cl.imageWrapper}>
-                    <Skeleton width={200} height={200} className={cl.img} />
-                </div>
+                <VStack max gap="8">
+                    <Skeleton width="100%" height={140} />
 
-                <div className={cl.infoWrapper}>
-                    {types}
-                </div>
+                    <Skeleton width={120} height={24} />
 
-                <Skeleton width={150} height={16} className={cl.title} />
+                    <Skeleton width={160} height={30} />
+
+                    <Skeleton width={140} height={30} />
+
+                    <Skeleton width={170} height={30} />
+
+                    <HStack gap="8">
+                        <Skeleton width={32} height={32} border="50%" />
+                        <Skeleton width={150} height={24} />
+                    </HStack>
+                </VStack>
             </Card>
         </div>
     );

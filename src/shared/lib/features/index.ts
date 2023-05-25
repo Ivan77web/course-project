@@ -1,6 +1,6 @@
-import { setFeatureFlags, getFeatureFlags } from './setGetFeatures';
-import { toggleFeatures } from './toggleFeatures';
-import { ToggleFeatures } from './ToggleFeatures/ToggleFeatures';
+import { setFeatureFlags, getFeatureFlags } from './lib/setGetFeatures';
+import { toggleFeatures } from './lib/toggleFeatures';
+import { ToggleFeatures } from './components/ToggleFeatures/ToggleFeatures';
 
 export {
     setFeatureFlags,

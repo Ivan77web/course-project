@@ -65,6 +65,7 @@ module.exports = {
                 'color',
                 'variant',
                 'size',
+                'wrap',
             ],
         }],
         'arrow-body-style': 'off',

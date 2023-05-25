@@ -43,6 +43,7 @@ export interface FlexProps extends DivProps {
     justify?: FlexJustify;
     align?: FlexAlign;
     direction: FlexDirection;
+    wrap?: boolean;
     gap?: FlexGap;
     max?: boolean;
 }
@@ -56,6 +57,7 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         gap,
         max,
+        wrap,
         ...otherProps
     } = props;
 
@@ -69,6 +71,7 @@ export const Flex = (props: FlexProps) => {
 
     const mods: Mods = {
         [cl.max]: max,
+        [cl.wrap]: wrap,
     };
 
     return (

@@ -7,6 +7,7 @@ import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeletonRedesigned } from '../ArticleListItemRedesigned/ArticleListItemSkeletonRedesigned';
 import cl from './ArticleListRedesigned.module.scss';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListProps {
     className?: string;
@@ -55,8 +56,10 @@ export const ArticleListRedesigned = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div
-            className={classNames(cl.articleList, {}, [className, cl[view]])}
+        <HStack
+            wrap
+            gap="16"
+            className={classNames(cl.articleList, {}, [])}
             data-testid="ArticleList"
         >
             {
@@ -66,6 +69,6 @@ export const ArticleListRedesigned = memo((props: ArticleListProps) => {
 
             }
             {isLoading && getSkeletons(view)}
-        </div>
+        </HStack>
     );
 });

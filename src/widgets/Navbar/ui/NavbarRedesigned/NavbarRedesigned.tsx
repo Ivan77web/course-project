@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { LoginModal } from '@/features/AuthByUserName';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotifictionButton } from '@/features/notifictionButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cl from './NavbarRedesigned.module.scss';
@@ -41,7 +41,7 @@ export const NavbarRedesigned = memo(({ className }: NavbarProps) => {
     return (
         <header className={classNames(cl.navbar, {}, [className])}>
             <Button
-                theme={ThemeButton.CLEAR_INVERTED}
+                variant="outline"
                 className={cl.links}
                 onClick={onOpenModal}
             >
