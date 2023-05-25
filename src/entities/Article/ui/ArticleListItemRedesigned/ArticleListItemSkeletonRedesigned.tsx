@@ -1,16 +1,16 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { ArticleView } from '../../model/consts/consts';
-import cl from './ArticleListItem.module.scss';
+import cl from './ArticleListItemRedesigned.module.scss';
 
 interface ArticleListItemSkeletonProps {
     className?: string;
     view: ArticleView;
 }
 
-export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
+export const ArticleListItemSkeletonRedesigned = memo((props: ArticleListItemSkeletonProps) => {
     const { className, view } = props;
     const types = <Skeleton width={130} height={16} className={cl.types} />;
 

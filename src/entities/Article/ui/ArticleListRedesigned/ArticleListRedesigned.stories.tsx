@@ -3,17 +3,17 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
-import { ArticleList } from './ArticleList';
+import { ArticleListRedesigned } from './ArticleListRedesigned';
 
 export default {
-    title: 'entities/Article/ArticleList',
-    component: ArticleList,
+    title: 'entities/Article/ArticleList/ArticleListRedesigned',
+    component: ArticleListRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleList>;
+} as ComponentMeta<typeof ArticleListRedesigned>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleListRedesigned> = (args) => <ArticleListRedesigned {...args} />;
 
 /* eslint-disable max-len */
 const articleTest = {

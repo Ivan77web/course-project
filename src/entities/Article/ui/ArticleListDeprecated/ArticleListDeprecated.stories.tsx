@@ -3,17 +3,17 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
-import { ArticleListItem } from './ArticleListItem';
+import { ArticleListDeprecated } from './ArticleListDeprecated';
 
 export default {
-    title: 'entities/Article/ArticleListItem',
-    component: ArticleListItem,
+    title: 'entities/Article/ArticleList/ArticleListDeprecated',
+    component: ArticleListDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleListItem>;
+} as ComponentMeta<typeof ArticleListDeprecated>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListDeprecated> = (args) => <ArticleListDeprecated {...args} />;
 
 /* eslint-disable max-len */
 const articleTest = {
@@ -93,44 +93,92 @@ const articleTest = {
     ],
 } as Article;
 
-export const BigCardNormal = Template.bind({});
-BigCardNormal.args = {
-    article: articleTest,
+export const BigNormal = Template.bind({});
+BigNormal.args = {
+    isLoading: false,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
-BigCardNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
+BigNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-export const BigCardDark = Template.bind({});
-BigCardDark.args = {
-    article: articleTest,
+export const BigDark = Template.bind({});
+BigDark.args = {
+    isLoading: false,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
-BigCardDark.decorators = [ThemeDecorator(Theme.DARK)];
+BigDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const BigCardGray = Template.bind({});
-BigCardGray.args = {
-    article: articleTest,
+export const BigGray = Template.bind({});
+BigGray.args = {
+    isLoading: false,
+    articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
-BigCardGray.decorators = [ThemeDecorator(Theme.GRAY)];
+BigGray.decorators = [ThemeDecorator(Theme.GRAY)];
 
-export const SmallCardNormal = Template.bind({});
-SmallCardNormal.args = {
-    article: articleTest,
+export const BigNormalIsLoading = Template.bind({});
+BigNormalIsLoading.args = {
+    isLoading: true,
+    view: ArticleView.BIG,
+};
+BigNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const BigDarkIsLoading = Template.bind({});
+BigDarkIsLoading.args = {
+    isLoading: true,
+    view: ArticleView.BIG,
+};
+BigDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BigGrayIsLoading = Template.bind({});
+BigGrayIsLoading.args = {
+    isLoading: true,
+    view: ArticleView.BIG,
+};
+BigGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const SmallNormal = Template.bind({});
+SmallNormal.args = {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
-SmallCardNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
+SmallNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-export const SmallCardDark = Template.bind({});
-SmallCardDark.args = {
-    article: articleTest,
+export const SmallDark = Template.bind({});
+SmallDark.args = {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
-SmallCardDark.decorators = [ThemeDecorator(Theme.DARK)];
+SmallDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const SmallCardGray = Template.bind({});
-SmallCardGray.args = {
-    article: articleTest,
+export const SmallGray = Template.bind({});
+SmallGray.args = {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
-SmallCardGray.decorators = [ThemeDecorator(Theme.GRAY)];
+SmallGray.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const SmallNormalIsLoading = Template.bind({});
+SmallNormalIsLoading.args = {
+    isLoading: true,
+    view: ArticleView.SMALL,
+};
+SmallNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const SmallDarkIsLoading = Template.bind({});
+SmallDarkIsLoading.args = {
+    isLoading: true,
+    view: ArticleView.SMALL,
+};
+SmallDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SmallGrayIsLoading = Template.bind({});
+SmallGrayIsLoading.args = {
+    isLoading: true,
+    view: ArticleView.SMALL,
+};
+SmallGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];

@@ -2,17 +2,17 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { ArticleView } from '../../model/consts/consts';
-import { ArticleListItemSkeleton } from './ArticleListItemSkeleton';
+import { ArticleListItemSkeletonDeprecated } from './ArticleListItemSkeletonDeprecated';
 
 export default {
-    title: 'entities/Article/ArticleListItemSkeleton',
-    component: ArticleListItemSkeleton,
+    title: 'entities/Article/ArticleListItemSkeleton/ArticleListItemSkeletonDeprecated',
+    component: ArticleListItemSkeletonDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleListItemSkeleton>;
+} as ComponentMeta<typeof ArticleListItemSkeletonDeprecated>;
 
-const Template: ComponentStory<typeof ArticleListItemSkeleton> = (args) => <ArticleListItemSkeleton {...args} />;
+const Template: ComponentStory<typeof ArticleListItemSkeletonDeprecated> = (args) => <ArticleListItemSkeletonDeprecated {...args} />;
 
 export const BigCardNormal = Template.bind({});
 BigCardNormal.args = {
