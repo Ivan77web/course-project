@@ -14,6 +14,8 @@
   "decrement": "",
   "increment": "",
   "lorem": "lorem",
+  "{{count}} просмотров": "",
+  "{{count}} просмотров_plural": "",
   "Админка": "Админка",
   "Айти": "Айти",
   "Ваш username": "Ваш username",

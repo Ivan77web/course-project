@@ -3,7 +3,10 @@
     "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
     "Комментарии": "Comments",
     "Назад к списку": "Back to list",
-    "Рекомендуем":"Recommend",
-    "Редактировать":"Edit",
-    "Оценка статей скоро появится": "Article rating coming soon"
+    "Рекомендуем": "Recommend",
+    "Редактировать": "Edit",
+    "Оценка статей скоро появится": "Article rating coming soon",
+    "{{count}} просмотров_zero": "{{count}} views",
+    "{{count}} просмотров_one": "{{count}} view",
+    "{{count}} просмотров_other": "{{count}} views"
 }
