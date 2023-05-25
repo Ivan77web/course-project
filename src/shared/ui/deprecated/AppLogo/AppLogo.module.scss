@@ -4,7 +4,8 @@
 }
 
 .appLogo {
-    z-index: 100;
+    position: relative;
+    z-index: 10;
 }
 
 .gradientBig {
