@@ -11,7 +11,8 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import { NotificationsList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/notifications.svg';
 import NotificationIconRedesigned from '@/shared/assets/icons/notificationsRedesigned.svg';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer as DrawerDeprecated } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import cl from './NotifictionButton.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 
@@ -71,9 +72,19 @@ export const NotifictionButton = memo((props: NotifictionButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                    <NotificationsList />
-                </Drawer>
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={(
+                        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                            <NotificationsList />
+                        </Drawer>
+                    )}
+                    off={(
+                        <DrawerDeprecated isOpen={isOpen} onClose={onCloseDrawer}>
+                            <NotificationsList />
+                        </DrawerDeprecated>
+                    )}
+                />
             </MobileView>
         </div>
     );
