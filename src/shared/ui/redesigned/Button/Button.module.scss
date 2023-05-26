@@ -36,6 +36,14 @@
     border: none;
     outline: none;
     border-radius: 34px;
+
+    &.success {
+        color: var(--cancel-redesigned);
+    }
+
+    &.error {
+        color: var(--save-redesigned);
+    }
 }
 
 .outline {
@@ -43,8 +51,32 @@
     border: 2px solid var(--icon-redesigned);
     border-radius: 34px;
 
-    &:hover {
-        border: 2px solid var(--accent-redesigned);
+    &.normal {
+        border: 2px solid var(--icon-redesigned);
+
+        &:hover {
+            border: 2px solid var(--accent-redesigned);
+        }
+    }
+
+    &.success {
+        border: 2px solid var(--cancel-redesigned);
+        color: var(--cancel-redesigned);
+
+        &:hover {
+            background: var(--cancel-redesigned);
+            color: white;
+        }
+    }
+
+    &.error {
+        border: 2px solid var(--save-redesigned);
+        color: var(--save-redesigned);
+
+        &:hover {
+            background: var(--save-redesigned);
+            color: white;
+        }
     }
 }
 

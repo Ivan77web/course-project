@@ -4,17 +4,17 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import { EditableProfileCardHeader } from './EditableProfileCardHeader';
+import { EditableProfileCardHeaderDeprecated } from './EditableProfileCardHeaderDeprecated';
 
 export default {
-    title: 'features/profile/EditableProfileCardHeader',
-    component: EditableProfileCardHeader,
+    title: 'features/profile/EditableProfileCardHeader/EditableProfileCardHeaderDeprecated',
+    component: EditableProfileCardHeaderDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof EditableProfileCardHeader>;
+} as ComponentMeta<typeof EditableProfileCardHeaderDeprecated>;
 
-const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => <EditableProfileCardHeader {...args} />;
+const Template: ComponentStory<typeof EditableProfileCardHeaderDeprecated> = (args) => <EditableProfileCardHeaderDeprecated {...args} />;
 
 export const NormalAdmin = Template.bind({});
 NormalAdmin.args = {};

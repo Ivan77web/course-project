@@ -3,17 +3,17 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import LoginForm from './LoginForm';
+import LoginFormRedesigned from './LoginFormRedesigned';
 
 export default {
-    title: 'features/LoginForm',
-    component: LoginForm,
+    title: 'features/LoginForm/LoginFormRedesigned',
+    component: LoginFormRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof LoginForm>;
+} as ComponentMeta<typeof LoginFormRedesigned>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: ComponentStory<typeof LoginFormRedesigned> = (args) => <LoginFormRedesigned {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

@@ -41,7 +41,7 @@ export const NavbarRedesigned = memo(({ className }: NavbarProps) => {
     return (
         <header className={classNames(cl.navbar, {}, [className])}>
             <Button
-                variant="outline"
+                variant="clear"
                 className={cl.links}
                 onClick={onOpenModal}
             >
