@@ -4,17 +4,17 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Article } from '../../model/types/article';
 import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
-import { ArticleDetails } from './ArticleDetails';
+import { ArticleDetailsDeprecated } from './ArticleDetailsDeprecated';
 
 export default {
-    title: 'entities/Article/ArticleDetails',
-    component: ArticleDetails,
+    title: 'entities/Article/ArticleDetails/ArticleDetailsDeprecated',
+    component: ArticleDetailsDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleDetails>;
+} as ComponentMeta<typeof ArticleDetailsDeprecated>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsDeprecated> = (args) => <ArticleDetailsDeprecated {...args} />;
 
 const article: Article = {
     id: '1',

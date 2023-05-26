@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -50,7 +50,7 @@ export const ArticleListRedesigned = memo((props: ArticleListProps) => {
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cl.articleList, {}, [className, cl[view]])}>
-                <Text size={TextSize.L} title={t('Статьи не найдены')} />
+                <Text size="l" title={t('Статьи не найдены')} />
             </div>
         );
     }

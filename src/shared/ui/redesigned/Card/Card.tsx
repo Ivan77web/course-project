@@ -33,8 +33,6 @@ export const Card = memo((props: CardProps) => {
         ...otherProps
     } = props;
 
-    console.log(border);
-
     const paddingClass = mapPaddingToClass[padding];
 
     return (

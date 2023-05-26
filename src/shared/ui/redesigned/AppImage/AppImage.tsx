@@ -20,6 +20,8 @@ export const AppImage = memo((props: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
+    console.log(src);
+
     useLayoutEffect(() => {
         const image = new Image();
         image.src = src ?? '';
