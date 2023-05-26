@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './StarRating.module.scss';
 import Star from '@/shared/assets/icons/star.svg';
-import { Icon } from '../ui/deprecated/Icon/Icon';
+import { Icon } from '../Icon/Icon';
 
 interface StarRatingProps {
     className?: string;
@@ -49,6 +49,7 @@ export const StarRating = memo((props: StarRatingProps) => {
             {
                 stars.map((starNumber) => (
                     <Icon
+                        clickable={!isSelected}
                         className={
                             classNames(
                                 cl.starIcon,

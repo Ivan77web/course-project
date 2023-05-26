@@ -1,17 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { RatingCard } from './RatingCard';
+import { RatingCardDeprecated } from './RatingCardDeprecated';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'entities/RatingCard',
-    component: RatingCard,
+    title: 'entities/RatingCard/RatingCardDeprecated',
+    component: RatingCardDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof RatingCard>;
+} as ComponentMeta<typeof RatingCardDeprecated>;
 
-const Template: ComponentStory<typeof RatingCard> = (args) => <RatingCard {...args} />;
+const Template: ComponentStory<typeof RatingCardDeprecated> = (args) => <RatingCardDeprecated {...args} />;
 
 export const NormalWithFeedback = Template.bind({});
 NormalWithFeedback.args = {

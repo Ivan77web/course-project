@@ -2,17 +2,17 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Comment } from '../../model/types/comment';
-import { CommentsList } from './CommentsList';
+import { CommentsListDeprecated } from './CommentsListDeprecated';
 
 export default {
-    title: 'entities/Comment/CommentsList',
-    component: CommentsList,
+    title: 'entities/Comment/CommentsList/CommentsListDeprecated',
+    component: CommentsListDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof CommentsList>;
+} as ComponentMeta<typeof CommentsListDeprecated>;
 
-const Template: ComponentStory<typeof CommentsList> = (args) => <CommentsList {...args} />;
+const Template: ComponentStory<typeof CommentsListDeprecated> = (args) => <CommentsListDeprecated {...args} />;
 
 const comments: Comment[] = [
     {

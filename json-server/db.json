@@ -799,6 +799,24 @@
       "rate": 1,
       "feedback": "",
       "id": "xs_waNZ"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "rate": 3,
+      "id": "oNnmTzh"
+    },
+    {
+      "userId": "2",
+      "articleId": "3",
+      "rate": 2,
+      "id": "8jq4_G4"
+    },
+    {
+      "userId": "2",
+      "articleId": "4",
+      "rate": 3,
+      "id": "ug9X9ky"
     }
   ],
   "profile-ratings": [

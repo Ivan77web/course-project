@@ -3,13 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack as HStackDeprecated } from '@/shared/ui/deprecated/Stack';
+import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import { HStack } from '@/shared/ui/redesigned/Stack';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cl from './AddCommentForm.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -40,26 +44,54 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack
-                data-testid="AddCommentForm"
-                max
-                justify="between"
-                className={classNames(cl.addCommentForm, {}, [className])}
-            >
-                <Input
-                    data-testid="AddCommentForm.Input"
-                    className={cl.input}
-                    placeholder={t('Введите текст комментария')}
-                    value={text}
-                    onChange={onCommentChangeText}
-                />
-                <Button
-                    onClick={onSendHandler}
-                    data-testid="AddCommentForm.Button"
-                >
-                    {t('Отправить')}
-                </Button>
-            </HStack>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={(
+                    <HStack
+                        data-testid="AddCommentForm"
+                        max
+                        gap="16"
+                        justify="between"
+                        className={classNames('', {}, [className])}
+                    >
+                        <Input
+                            data-testid="AddCommentForm.Input"
+                            className={cl.input}
+                            placeholder={t('Введите текст комментария')}
+                            value={text}
+                            onChange={onCommentChangeText}
+                        />
+                        <Button
+                            onClick={onSendHandler}
+                            data-testid="AddCommentForm.Button"
+                        >
+                            {t('Отправить')}
+                        </Button>
+                    </HStack>
+                )}
+                off={(
+                    <HStackDeprecated
+                        data-testid="AddCommentForm"
+                        max
+                        justify="between"
+                        className={classNames(cl.addCommentForm, {}, [className])}
+                    >
+                        <InputDeprecated
+                            data-testid="AddCommentForm.Input"
+                            className={cl.input}
+                            placeholder={t('Введите текст комментария')}
+                            value={text}
+                            onChange={onCommentChangeText}
+                        />
+                        <ButtonDeprecated
+                            onClick={onSendHandler}
+                            data-testid="AddCommentForm.Button"
+                        >
+                            {t('Отправить')}
+                        </ButtonDeprecated>
+                    </HStackDeprecated>
+                )}
+            />
         </DynamicModuleLoader>
     );
 });
