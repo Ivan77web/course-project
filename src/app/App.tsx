@@ -11,6 +11,7 @@ import { AppRouter } from './providers/router';
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 const App = () => {
     const { theme } = useTheme();
@@ -23,7 +24,19 @@ const App = () => {
 
     if (!inited) {
         return (
-            <PageLoader />
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={(
+                    <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+                        <AppLoaderLayout />
+                    </div>
+                )}
+                off={(
+                    <div id="app" className={classNames('app', {}, [theme])}>
+                        <PageLoader />
+                    </div>
+                )}
+            />
         );
     }
 
