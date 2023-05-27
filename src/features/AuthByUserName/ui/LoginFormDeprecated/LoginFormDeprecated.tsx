@@ -14,6 +14,7 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
+import { useForceUpdate } from '@/shared/lib/render/ForceUpdate';
 
 export interface LoginFormProps {
     className?: string;
@@ -31,6 +32,7 @@ const LoginFormDeprecated = memo(({ className, onSuccess }: LoginFormProps) => {
     const password = useSelector(getLoginPassword);
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginLoading);
+    const forceUpdate = useForceUpdate();
 
     const onChangeUserName = useCallback((val: string) => {
         dispatch(loginActions.setUserName(val));
@@ -44,9 +46,11 @@ const LoginFormDeprecated = memo(({ className, onSuccess }: LoginFormProps) => {
         const result = await dispatch(loginByUserName({ username, password }));
 
         if (result.meta.requestStatus === 'fulfilled') {
+            // window.location.reload();
             onSuccess();
+            forceUpdate();
         }
-    }, [dispatch, onSuccess, username, password]);
+    }, [dispatch, onSuccess, username, password, forceUpdate]);
 
     return (
         <DynamicModuleLoader
