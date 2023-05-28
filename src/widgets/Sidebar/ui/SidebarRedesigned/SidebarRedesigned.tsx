@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './SidebarRedesigned.module.scss';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { Icon } from '@/shared/ui/redesigned/Icon';

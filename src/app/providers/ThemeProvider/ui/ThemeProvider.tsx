@@ -3,7 +3,6 @@ import {
 } from 'react';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
-import { useJsonSettings } from '@/entities/User';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 
 interface ThemeProviderProps {
@@ -18,16 +17,15 @@ const ThemeProvider = (props: ThemeProviderProps) => {
         initiallTheme,
         children,
     } = props;
-    const { theme: defaultTheme } = useJsonSettings();
     const [theme, setTheme] = useState<Theme>(initiallTheme || fallbackTheme || Theme.LIGHT);
     const [isThemeInited, setThemeInited] = useState(false);
 
     useEffect(() => {
-        if (!isThemeInited && defaultTheme) {
-            setTheme(defaultTheme);
+        if (!isThemeInited && initiallTheme) {
+            setTheme(initiallTheme);
             setThemeInited(true);
         }
-    }, [defaultTheme, isThemeInited]);
+    }, [initiallTheme, isThemeInited]);
 
     useEffect(() => {
         // скролл в цвет темы
