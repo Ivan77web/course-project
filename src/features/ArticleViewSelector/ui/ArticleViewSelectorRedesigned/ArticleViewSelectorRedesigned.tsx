@@ -40,6 +40,7 @@ export const ArticleViewSelectorRedesigned = memo((props: ArticleViewSelectorPro
             <HStack gap="8">
                 {viewTypes.map((viewType) => (
                     <Icon
+                        key={viewType.view}
                         clickable
                         onClick={onClick(viewType.view)}
                         Svg={viewType.icon}
