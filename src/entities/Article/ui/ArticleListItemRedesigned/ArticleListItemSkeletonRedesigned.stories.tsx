@@ -12,7 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItemSkeletonRedesigned>;
 
-const Template: ComponentStory<typeof ArticleListItemSkeletonRedesigned> = (args) => <ArticleListItemSkeletonRedesigned {...args} />;
+const Template: ComponentStory<typeof ArticleListItemSkeletonRedesigned> = (args) => <div className="app_redesigned"><ArticleListItemSkeletonRedesigned {...args} /></div>;
 
 export const BigCardNormal = Template.bind({});
 BigCardNormal.args = {

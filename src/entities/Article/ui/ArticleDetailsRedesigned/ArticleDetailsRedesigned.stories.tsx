@@ -5,6 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Article } from '../../model/types/article';
 import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
 import { ArticleDetailsRedesigned } from './ArticleDetailsRedesigned';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/Article/ArticleDetails/ArticleDetailsRedesigned',
@@ -14,7 +15,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetailsRedesigned>;
 
-const Template: ComponentStory<typeof ArticleDetailsRedesigned> = (args) => <ArticleDetailsRedesigned {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsRedesigned> = (args) => <div className="app_redesigned"><ArticleDetailsRedesigned {...args} /></div>;
 
 const article: Article = {
     id: '1',
@@ -92,11 +93,14 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    articleDatails: {
-        data: article,
-    },
-})];
+Normal.decorators = [
+    StoreDecorator({
+        articleDatails: {
+            data: article,
+        },
+    }),
+    NewDesignDecorator,
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
@@ -107,6 +111,7 @@ Dark.decorators = [
         },
     }),
     ThemeDecorator(Theme.DARK),
+    NewDesignDecorator,
 ];
 
 export const Gray = Template.bind({});
@@ -118,6 +123,7 @@ Gray.decorators = [
         },
     }),
     ThemeDecorator(Theme.GRAY),
+    NewDesignDecorator,
 ];
 
 export const Loading = Template.bind({});

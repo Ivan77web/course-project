@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListRedesigned } from './ArticleListRedesigned';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/Article/ArticleList/ArticleListRedesigned',
@@ -13,7 +14,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListRedesigned>;
 
-const Template: ComponentStory<typeof ArticleListRedesigned> = (args) => <ArticleListRedesigned {...args} />;
+const Template: ComponentStory<typeof ArticleListRedesigned> = (args) => <div className="app_redesigned"><ArticleListRedesigned {...args} /></div>;
 
 /* eslint-disable max-len */
 const articleTest = {
@@ -99,7 +100,7 @@ BigNormal.args = {
     articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
-BigNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
+BigNormal.decorators = [ThemeDecorator(Theme.LIGHT), NewDesignDecorator];
 
 export const BigDark = Template.bind({});
 BigDark.args = {
@@ -107,7 +108,7 @@ BigDark.args = {
     articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
-BigDark.decorators = [ThemeDecorator(Theme.DARK)];
+BigDark.decorators = [ThemeDecorator(Theme.DARK), NewDesignDecorator];
 
 export const BigGray = Template.bind({});
 BigGray.args = {
@@ -115,28 +116,28 @@ BigGray.args = {
     articles: new Array(3).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.BIG,
 };
-BigGray.decorators = [ThemeDecorator(Theme.GRAY)];
+BigGray.decorators = [ThemeDecorator(Theme.GRAY), NewDesignDecorator];
 
 export const BigNormalIsLoading = Template.bind({});
 BigNormalIsLoading.args = {
     isLoading: true,
     view: ArticleView.BIG,
 };
-BigNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
+BigNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT), NewDesignDecorator];
 
 export const BigDarkIsLoading = Template.bind({});
 BigDarkIsLoading.args = {
     isLoading: true,
     view: ArticleView.BIG,
 };
-BigDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
+BigDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK), NewDesignDecorator];
 
 export const BigGrayIsLoading = Template.bind({});
 BigGrayIsLoading.args = {
     isLoading: true,
     view: ArticleView.BIG,
 };
-BigGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];
+BigGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY), NewDesignDecorator];
 
 export const SmallNormal = Template.bind({});
 SmallNormal.args = {
@@ -144,7 +145,7 @@ SmallNormal.args = {
     articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
-SmallNormal.decorators = [ThemeDecorator(Theme.LIGHT)];
+SmallNormal.decorators = [ThemeDecorator(Theme.LIGHT), NewDesignDecorator];
 
 export const SmallDark = Template.bind({});
 SmallDark.args = {
@@ -152,7 +153,7 @@ SmallDark.args = {
     articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
-SmallDark.decorators = [ThemeDecorator(Theme.DARK)];
+SmallDark.decorators = [ThemeDecorator(Theme.DARK), NewDesignDecorator];
 
 export const SmallGray = Template.bind({});
 SmallGray.args = {
@@ -160,25 +161,25 @@ SmallGray.args = {
     articles: new Array(9).fill(0).map((item, index) => ({ ...articleTest, id: String(index) })),
     view: ArticleView.SMALL,
 };
-SmallGray.decorators = [ThemeDecorator(Theme.GRAY)];
+SmallGray.decorators = [ThemeDecorator(Theme.GRAY), NewDesignDecorator];
 
 export const SmallNormalIsLoading = Template.bind({});
 SmallNormalIsLoading.args = {
     isLoading: true,
     view: ArticleView.SMALL,
 };
-SmallNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT)];
+SmallNormalIsLoading.decorators = [ThemeDecorator(Theme.LIGHT), NewDesignDecorator];
 
 export const SmallDarkIsLoading = Template.bind({});
 SmallDarkIsLoading.args = {
     isLoading: true,
     view: ArticleView.SMALL,
 };
-SmallDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK)];
+SmallDarkIsLoading.decorators = [ThemeDecorator(Theme.DARK), NewDesignDecorator];
 
 export const SmallGrayIsLoading = Template.bind({});
 SmallGrayIsLoading.args = {
     isLoading: true,
     view: ArticleView.SMALL,
 };
-SmallGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY)];
+SmallGrayIsLoading.decorators = [ThemeDecorator(Theme.GRAY), NewDesignDecorator];

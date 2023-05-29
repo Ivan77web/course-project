@@ -13,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItemRedesigned>;
 
-const Template: ComponentStory<typeof ArticleListItemRedesigned> = (args) => <ArticleListItemRedesigned {...args} />;
+const Template: ComponentStory<typeof ArticleListItemRedesigned> = (args) => <div className="app_redesigned"><ArticleListItemRedesigned {...args} /></div>;
 
 /* eslint-disable max-len */
 const articleTest = {

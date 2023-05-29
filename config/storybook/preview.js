@@ -16,7 +16,7 @@ export const parameters = {
     },
     layout: 'fullscreen',
     themes: {
-        default: 'gray',
+        default: 'light',
         list: [
             { name: 'light', class: ['app', Theme.LIGHT], color: '#090949' },
             { name: 'dark', class: ['app', Theme.DARK], color: '#5f765f' },
