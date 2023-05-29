@@ -3,6 +3,7 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Comment } from '../../model/types/comment';
 import { CommentsListRedesigned } from './CommentsListRedesigned';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/Comment/CommentsList/CommentsListRedesigned',
@@ -12,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof CommentsListRedesigned>;
 
-const Template: ComponentStory<typeof CommentsListRedesigned> = (args) => <CommentsListRedesigned {...args} />;
+const Template: ComponentStory<typeof CommentsListRedesigned> = (args) => <div className="app_redesigned"><CommentsListRedesigned {...args} /></div>;
 
 const comments: Comment[] = [
     {
@@ -39,20 +40,22 @@ export const Normal = Template.bind({});
 Normal.args = {
     comments,
 };
+Normal.decorators = [NewDesignDecorator];
 
 export const Dark = Template.bind({});
 Dark.args = {
     comments,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), NewDesignDecorator];
 
 export const Gray = Template.bind({});
 Gray.args = {
     comments,
 };
-Gray.decorators = [ThemeDecorator(Theme.GRAY)];
+Gray.decorators = [ThemeDecorator(Theme.GRAY), NewDesignDecorator];
 
 export const isLoading = Template.bind({});
 isLoading.args = {
     isLoading: true,
 };
+isLoading.decorators = [NewDesignDecorator];

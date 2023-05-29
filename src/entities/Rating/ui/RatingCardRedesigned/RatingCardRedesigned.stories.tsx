@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { RatingCardRedesigned } from './RatingCardRedesigned';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/RatingCard/RatingCardRedesigned',
@@ -9,9 +10,10 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [NewDesignDecorator],
 } as ComponentMeta<typeof RatingCardRedesigned>;
 
-const Template: ComponentStory<typeof RatingCardRedesigned> = (args) => <RatingCardRedesigned {...args} />;
+const Template: ComponentStory<typeof RatingCardRedesigned> = (args) => <div className="app_redesigned"><RatingCardRedesigned {...args} /></div>;
 
 export const NormalWithFeedback = Template.bind({});
 NormalWithFeedback.args = {

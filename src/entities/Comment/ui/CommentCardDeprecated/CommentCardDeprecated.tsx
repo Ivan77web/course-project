@@ -3,8 +3,8 @@ import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Comment } from '../../model/types/comment';
 import cl from './CommentCardDeprecated.module.scss';
@@ -20,16 +20,18 @@ export const CommentCardDeprecated = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div
+            <VStack
+                gap="8"
+                max
                 data-testid="CommentCard.Loader"
                 className={classNames(cl.commentCard, {}, [className, cl.loading])}
             >
-                <div className={cl.header}>
+                <HStack gap="8">
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton width={100} height={16} className={cl.username} />
-                </div>
+                </HStack>
                 <Skeleton width="100%" height={50} className={cl.text} />
-            </div>
+            </VStack>
         );
     }
 

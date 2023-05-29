@@ -3,6 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 import { NotificationsListRedesigned } from './NotificationsListRedesigned';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/Notifications/NotificationsList/NotificationsListRedesigned',
@@ -45,16 +46,27 @@ export default {
     },
 } as ComponentMeta<typeof NotificationsListRedesigned>;
 
-const Template: ComponentStory<typeof NotificationsListRedesigned> = (args) => <NotificationsListRedesigned {...args} />;
+const Template: ComponentStory<typeof NotificationsListRedesigned> = (args) => <div className="app_redesigned"><NotificationsListRedesigned {...args} /></div>;
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({})];
+Normal.decorators = [
+    StoreDecorator({}),
+    NewDesignDecorator,
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({}),
+    NewDesignDecorator,
+];
 
 export const Gray = Template.bind({});
 Gray.args = {};
-Gray.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Gray.decorators = [
+    ThemeDecorator(Theme.GRAY),
+    StoreDecorator({}),
+    NewDesignDecorator,
+];

@@ -57,4 +57,4 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const Gray = Template.bind({});
 Gray.args = {};
-Gray.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Gray.decorators = [ThemeDecorator(Theme.GRAY), StoreDecorator({})];

@@ -12,7 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof CommentCardRedesigned>;
 
-const Template: ComponentStory<typeof CommentCardRedesigned> = (args) => <CommentCardRedesigned {...args} />;
+const Template: ComponentStory<typeof CommentCardRedesigned> = (args) => <div className="app_redesigned"><CommentCardRedesigned {...args} /></div>;
 
 const comment: Comment = {
     id: '1',

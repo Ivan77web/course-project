@@ -18,7 +18,7 @@ export default {
     },
 } as ComponentMeta<typeof NotificationItemRedesigned>;
 
-const Template: ComponentStory<typeof NotificationItemRedesigned> = (args) => <NotificationItemRedesigned {...args} />;
+const Template: ComponentStory<typeof NotificationItemRedesigned> = (args) => <div className="app_redesigned"><NotificationItemRedesigned {...args} /></div>;
 
 export const Normal = Template.bind({});
 
