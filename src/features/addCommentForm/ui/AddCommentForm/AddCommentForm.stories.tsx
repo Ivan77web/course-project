@@ -14,22 +14,11 @@ export default {
 } as ComponentMeta<typeof AddCommentForm>;
 
 const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />;
+const TemplateRedesigned: ComponentStory<typeof AddCommentForm> = (args) => <div className="app_redesigned"><AddCommentForm {...args} /></div>;
 
 export const NormalDeprecated = Template.bind({});
 NormalDeprecated.args = {};
 NormalDeprecated.decorators = [
-    StoreDecorator({
-        addCommentForm: {
-            text: '',
-            error: '',
-        },
-    }),
-];
-
-export const NormalRedesigned = Template.bind({});
-NormalRedesigned.args = {};
-NormalRedesigned.decorators = [
-    NewDesignDecorator,
     StoreDecorator({
         addCommentForm: {
             text: '',
@@ -53,6 +42,44 @@ Dark.decorators = [
 export const Gray = Template.bind({});
 Gray.args = {};
 Gray.decorators = [
+    StoreDecorator({
+        addCommentForm: {
+            text: '',
+            error: '',
+        },
+    }),
+    ThemeDecorator(Theme.GRAY),
+];
+
+export const NormalRedesigned = TemplateRedesigned.bind({});
+NormalRedesigned.args = {};
+NormalRedesigned.decorators = [
+    NewDesignDecorator,
+    StoreDecorator({
+        addCommentForm: {
+            text: '',
+            error: '',
+        },
+    }),
+];
+
+export const DarkRedesigned = TemplateRedesigned.bind({});
+DarkRedesigned.args = {};
+DarkRedesigned.decorators = [
+    NewDesignDecorator,
+    StoreDecorator({
+        addCommentForm: {
+            text: '',
+            error: '',
+        },
+    }),
+    ThemeDecorator(Theme.DARK),
+];
+
+export const GrayRedesigned = TemplateRedesigned.bind({});
+GrayRedesigned.args = {};
+GrayRedesigned.decorators = [
+    NewDesignDecorator,
     StoreDecorator({
         addCommentForm: {
             text: '',

@@ -55,12 +55,6 @@ export const Input = memo((props: InputProps) => {
     // useEffects
 
     useEffect(() => {
-        if (value === '' && refCaret.current) {
-            refCaret.current.style.left = '0px';
-        }
-    }, [value]);
-
-    useEffect(() => {
         if (autoFocus) {
             setIsFocused(true);
             refInput.current?.focus();
