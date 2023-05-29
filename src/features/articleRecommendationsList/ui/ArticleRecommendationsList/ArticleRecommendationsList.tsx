@@ -3,9 +3,8 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList } from '@/entities/Article';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
-import { VStack as VStackDeprecated } from '@/shared/ui/deprecated/Stack';
+import { VStack as VStackDeprecated, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { VStack } from '@/shared/ui/redesigned/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 import { ToggleFeatures } from '@/shared/lib/features';
 

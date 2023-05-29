@@ -2,10 +2,12 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextSize, TextTheme } from './Text';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from './Text';
 
 export default {
-    title: 'shared/Text',
+    title: 'shared/Text/TextDeprecated',
     component: Text,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -13,6 +15,24 @@ export default {
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
+
+export const Light = Template.bind({});
+Light.args = {
+    title: 'Title lorem ipsum',
+};
+Light.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const Dark = Template.bind({});
+Dark.args = {
+    title: 'Title lorem ipsum',
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OptionalBg = Template.bind({});
+OptionalBg.args = {
+    title: 'Title lorem ipsum',
+};
+OptionalBg.decorators = [ThemeDecorator(Theme.GRAY)];
 
 export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
@@ -30,83 +50,56 @@ TitleWithText.args = {
     text: 'Text lorem ipsum',
 };
 
-export const OnlyTitleDark = Template.bind({});
-OnlyTitleDark.args = {
-    title: 'Title lorem ipsum',
-};
-OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const OnlyTextDark = Template.bind({});
-OnlyTextDark.args = {
+export const Primary = Template.bind({});
+Primary.args = {
+    theme: TextTheme.PRIMARY,
     text: 'Text lorem ipsum',
 };
-OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const TitleWithTextDark = Template.bind({});
-TitleWithTextDark.args = {
-    title: 'Title lorem ipsum',
+export const Inverted = Template.bind({});
+Inverted.args = {
+    theme: TextTheme.INVERTED,
     text: 'Text lorem ipsum',
 };
-TitleWithTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const ErrorTitle = Template.bind({});
-ErrorTitle.args = {
-    title: 'Title lorem ipsum',
+export const Error = Template.bind({});
+Error.args = {
     theme: TextTheme.ERROR,
-};
-
-export const ErrorText = Template.bind({});
-ErrorText.args = {
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
 };
 
-export const ErrorTitleWithText = Template.bind({});
-ErrorTitleWithText.args = {
-    title: 'Title lorem ipsum',
+export const AlignLeft = Template.bind({});
+AlignLeft.args = {
+    align: TextAlign.LEFT,
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
 };
 
-export const ErrorTitleDark = Template.bind({});
-ErrorTitleDark.args = {
-    title: 'Title lorem ipsum',
-    theme: TextTheme.ERROR,
-};
-ErrorTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const ErrorTextDark = Template.bind({});
-ErrorTextDark.args = {
+export const AlignCenter = Template.bind({});
+AlignCenter.args = {
+    align: TextAlign.CENTER,
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
 };
-ErrorTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const ErrorTitleWithTextDark = Template.bind({});
-ErrorTitleWithTextDark.args = {
-    title: 'Title lorem ipsum',
+export const AlignRight = Template.bind({});
+AlignRight.args = {
+    align: TextAlign.RIGHT,
     text: 'Text lorem ipsum',
-    theme: TextTheme.ERROR,
 };
-ErrorTitleWithTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const SizeS = Template.bind({});
-SizeS.args = {
-    title: 'Title lorem ipsum',
-    text: 'Text lorem ipsum',
+export const S = Template.bind({});
+S.args = {
     size: TextSize.S,
+    text: 'Text lorem ipsum',
 };
 
-export const SizeM = Template.bind({});
-SizeM.args = {
-    title: 'Title lorem ipsum',
-    text: 'Text lorem ipsum',
+export const M = Template.bind({});
+M.args = {
     size: TextSize.M,
+    text: 'Text lorem ipsum',
 };
 
-export const SizeL = Template.bind({});
-SizeL.args = {
-    title: 'Title lorem ipsum',
-    text: 'Text lorem ipsum',
+export const L = Template.bind({});
+L.args = {
     size: TextSize.L,
+    text: 'Text lorem ipsum',
 };

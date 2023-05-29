@@ -4,7 +4,7 @@ import { ThemeDecorator } from '../../../config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '../../../const/theme';
 
 export default {
-    title: 'shared/StarRating',
+    title: 'shared/StarRating/StarRatingDeprecated',
     component: StarRating,
     argTypes: {
         backgroundColor: { control: 'color' },

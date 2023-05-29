@@ -50,7 +50,7 @@ export const Modal = (props: ModalProps) => {
                     [
                         className,
                         theme,
-                        'app_modal',
+                        'app_redesigned',
                         toggleFeatures({
                             name: 'isAppRedesigned',
                             off: () => cl.modalOld,

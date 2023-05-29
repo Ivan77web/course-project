@@ -9,12 +9,10 @@ import { ToggleFeatures, getFeatureFlags } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { updateFeatureFlag } from '@/shared/lib/features/services/updateFeatureFlags';
 import { getUserAuthData } from '@/entities/User';
-import { HStack } from '@/shared/ui/redesigned/Stack';
-import { HStack as HStackDeprecated } from '@/shared/ui/deprecated/Stack';
+import { HStack, HStack as HStackDeprecated } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
-import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { Skeleton as SkeletonDeprecated, Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface UiDesignSwitcherProps {
     className?: string;

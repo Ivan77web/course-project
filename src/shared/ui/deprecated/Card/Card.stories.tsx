@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Text } from '../Text';
-import { Card } from './Card';
+import { Card, CardTheme } from './Card';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Card',
+    title: 'shared/Card/CardDeprecated',
     component: Card,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -16,6 +16,13 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
+    children: <Text title="text" text="text text" />,
+};
+Normal.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+    theme: CardTheme.OUTLINED,
     children: <Text title="text" text="text text" />,
 };
 

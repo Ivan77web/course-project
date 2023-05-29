@@ -5,7 +5,7 @@ import { DropDown } from './DropDown';
 import { Button } from '../../../../deprecated/Button/Button';
 
 export default {
-    title: 'shared/DropDown',
+    title: 'shared/DropDown/DropDownRedesigned',
     component: DropDown,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -1,9 +1,8 @@
-// @ts-nocheck
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AppImage } from './AppImage';
 
 export default {
-    title: 'shared/AppImage',
+    title: 'shared/AppImage/AppImageDeprecated',
     component: AppImage,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -7,7 +7,7 @@ import { DropdownDirection } from '@/shared/types/ui';
 import cl from './Listbox.module.scss';
 import { Icon } from '../../../../deprecated/Icon/Icon';
 import CheckMarkIcon from '../../../../../assets/icons/checkMark.svg';
-import { HStack } from '../../../Stack';
+import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../../deprecated/Button/Button';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCl from '../../styles/popup.module.scss';

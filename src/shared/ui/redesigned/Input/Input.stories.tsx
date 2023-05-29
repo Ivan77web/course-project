@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Input } from './Input';
 
 export default {
-    title: 'shared/Input',
+    title: 'shared/Input/InputRedesigned',
     component: Input,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -19,6 +19,7 @@ Light.args = {
     placeholder: 'Type text',
     value: '12345',
 };
+Light.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Dark = Template.bind({});
 Dark.args = {
@@ -26,3 +27,34 @@ Dark.args = {
     value: '12345',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OptionalBg = Template.bind({});
+OptionalBg.args = {
+    placeholder: 'Type text',
+    value: '12345',
+};
+OptionalBg.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const S = Template.bind({});
+S.args = {
+    placeholder: 'Type text',
+    value: '12345',
+    size: 's',
+};
+S.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const M = Template.bind({});
+M.args = {
+    placeholder: 'Type text',
+    value: '12345',
+    size: 'm',
+};
+M.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const L = Template.bind({});
+L.args = {
+    placeholder: 'Type text',
+    value: '12345',
+    size: 'l',
+};
+L.decorators = [ThemeDecorator(Theme.GRAY)];

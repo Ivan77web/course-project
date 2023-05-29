@@ -3,10 +3,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleImageBlock } from '../../model/types/article';
 import cl from './ArticleImageBlockComponent.module.scss';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { Skeleton, Skeleton as SkeletonDeprecated } from '@/shared/ui/redesigned/Skeleton';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { AppImage as AppImageDeprecated } from '@/shared/ui/deprecated/AppImage';
-import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Text as TextDeprecated, TextAlign } from '@/shared/ui/deprecated/Text';
 import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 

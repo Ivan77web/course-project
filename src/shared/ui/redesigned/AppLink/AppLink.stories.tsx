@@ -5,7 +5,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppLink } from './AppLink';
 
 export default {
-    title: 'shared/AppLink',
+    title: 'shared/AppLink/AppLinkRedesigned',
     component: AppLink,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -42,3 +42,17 @@ SecondaryRed.args = {
     variant: 'red',
 };
 SecondaryRed.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryOptionalBg = Template.bind({});
+PrimaryDark.args = {
+    children: 'Text',
+    variant: 'primary',
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.GRAY)];
+
+export const SecondaryOptionalBg = Template.bind({});
+SecondaryRed.args = {
+    children: 'Text',
+    variant: 'red',
+};
+SecondaryRed.decorators = [ThemeDecorator(Theme.GRAY)];

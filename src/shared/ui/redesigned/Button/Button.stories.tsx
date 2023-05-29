@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/shared/const/theme';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Button } from './Button';
+import { Icon } from '../Icon';
+import Arrow from '@/shared/assets/icons/arrowRedesigned.svg';
 
 export default {
-    title: 'shared/Button',
+    title: 'shared/Button/ButtonRedesigned',
     component: Button,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -14,10 +14,8 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'Text',
-};
+// addonLeft?: ReactNode;
+// addonRight?: ReactNode;
 
 export const Clear = Template.bind({});
 Clear.args = {
@@ -31,38 +29,79 @@ Outline.args = {
     variant: 'outline',
 };
 
-export const OutlineSizeL = Template.bind({});
-OutlineSizeL.args = {
+export const Filled = Template.bind({});
+Filled.args = {
     children: 'Text',
-    variant: 'outline',
+    variant: 'filled',
+};
+
+export const Normal = Template.bind({});
+Normal.args = {
+    children: 'Text',
+    color: 'normal',
+};
+
+export const Success = Template.bind({});
+Success.args = {
+    children: 'Text',
+    color: 'success',
+};
+
+export const Error = Template.bind({});
+Error.args = {
+    children: 'Text',
+    color: 'error',
+};
+
+export const M = Template.bind({});
+M.args = {
+    children: 'Text',
+    size: 'm',
+};
+
+export const L = Template.bind({});
+L.args = {
+    children: 'Text',
     size: 'l',
 };
 
-export const OutlineSizeXL = Template.bind({});
-OutlineSizeXL.args = {
+export const XL = Template.bind({});
+XL.args = {
     children: 'Text',
-    variant: 'outline',
     size: 'xl',
 };
 
-export const OutlineDark = Template.bind({});
-OutlineDark.args = {
+export const OutlineSquare = Template.bind({});
+OutlineSquare.args = {
     children: 'Text',
-    variant: 'outline',
-};
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-    children: '>',
     variant: 'outline',
     square: true,
-    size: 'xl',
+};
+
+export const OutlineDisabled = Template.bind({});
+OutlineDisabled.args = {
+    children: 'Text',
+    variant: 'outline',
     disabled: true,
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
+export const OutlineFullWidth = Template.bind({});
+OutlineFullWidth.args = {
     children: 'Text',
+    variant: 'outline',
     fullWidth: true,
+};
+
+export const OutlineAddonLeft = Template.bind({});
+OutlineAddonLeft.args = {
+    children: 'Text',
+    variant: 'outline',
+    addonLeft: <Icon Svg={Arrow} />,
+};
+
+export const OutlineAddonRight = Template.bind({});
+OutlineAddonRight.args = {
+    children: 'Text',
+    variant: 'outline',
+    addonRight: <Icon Svg={Arrow} />,
 };

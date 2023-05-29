@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getRouteAdmin, getRouteProfile, getRouteSettings } from '@/shared/const/router';
-import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { DropDown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { DropDown } from '@/shared/ui/redesigned/Popups';
@@ -74,7 +73,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                 <DropdownDeprecated
                     className={classNames('', {}, [className])}
                     direction="bottom right"
-                    trigger={<AvatarDeprecated fallbackInverted size={30} src={authData.avatar} />}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
                     items={items}
                 />
             )}
