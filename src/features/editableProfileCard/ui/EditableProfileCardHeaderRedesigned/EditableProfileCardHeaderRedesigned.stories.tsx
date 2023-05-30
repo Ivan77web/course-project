@@ -7,14 +7,18 @@ import { Theme } from '@/shared/const/theme';
 import { EditableProfileCardHeaderRedesigned } from './EditableProfileCardHeaderRedesigned';
 
 export default {
-    title: 'features/profile/EditableProfileCardHeader/EditableProfileCardHeaderRedesigned',
+    title: 'features/Profile/EditableProfileCardHeader/EditableProfileCardHeaderRedesigned',
     component: EditableProfileCardHeaderRedesigned,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof EditableProfileCardHeaderRedesigned>;
 
-const Template: ComponentStory<typeof EditableProfileCardHeaderRedesigned> = (args) => <EditableProfileCardHeaderRedesigned {...args} />;
+const Template: ComponentStory<typeof EditableProfileCardHeaderRedesigned> = (args) => (
+    <div className="app_redesigned">
+        <EditableProfileCardHeaderRedesigned {...args} />
+    </div>
+);
 
 export const NormalAdmin = Template.bind({});
 NormalAdmin.args = {};

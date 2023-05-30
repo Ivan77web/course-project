@@ -7,7 +7,7 @@ import { Theme } from '@/shared/const/theme';
 import { EditableProfileCardHeaderDeprecated } from './EditableProfileCardHeaderDeprecated';
 
 export default {
-    title: 'features/profile/EditableProfileCardHeader/EditableProfileCardHeaderDeprecated',
+    title: 'features/Profile/EditableProfileCardHeader/EditableProfileCardHeaderDeprecated',
     component: EditableProfileCardHeaderDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },

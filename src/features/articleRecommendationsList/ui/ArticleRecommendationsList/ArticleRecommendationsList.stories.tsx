@@ -1,24 +1,36 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from '@/entities/Article';
+import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const article: Article = {
     id: '1',
-    img: '',
-    createdAt: '',
+    img: 'https://www.pngmart.com/files/7/Python-Transparent-Background.png',
+    createdAt: '26.02.2022',
     views: 123,
-    user: { id: '1', username: '123' },
-    blocks: [],
-    type: [],
+    user: { id: '1', username: 'Иван Иванов' },
+    type: [ArticleType.IT],
     title: '123',
-    subtitle: 'asfsa',
+    subtitle: 'Что нового в JS за 2022 год?',
+    blocks: [
+        {
+            id: '1',
+            type: ArticleBlockType.TEXT,
+            title: 'Заголовок этого блока',
+            paragraphs: [
+                'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
+                'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
+                'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:',
+            ],
+        },
+    ],
 };
 
 export default {
-    title: 'features/ArticleRecommendationsList',
+    title: 'features/Article/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -26,7 +38,7 @@ export default {
     parameters: {
         mockData: [
             {
-                url: `${__API__}/articles?_limit=3`,
+                url: `${__API__}/articles?_limit=3&_expand=user`,
                 method: 'GET',
                 status: 200,
                 response: [
@@ -40,6 +52,7 @@ export default {
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
+const TemplateRedesigned: ComponentStory<typeof ArticleRecommendationsList> = (args) => <div className="app_redesigned"><ArticleRecommendationsList {...args} /></div>;
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -57,4 +70,27 @@ Gray.args = {};
 Gray.decorators = [
     StoreDecorator({}),
     ThemeDecorator(Theme.GRAY),
+];
+
+export const NormalRedesigned = TemplateRedesigned.bind({});
+NormalRedesigned.args = {};
+NormalRedesigned.decorators = [
+    StoreDecorator({}),
+    NewDesignDecorator,
+];
+
+export const DarkRedesigned = TemplateRedesigned.bind({});
+DarkRedesigned.args = {};
+DarkRedesigned.decorators = [
+    StoreDecorator({}),
+    ThemeDecorator(Theme.DARK),
+    NewDesignDecorator,
+];
+
+export const GrayRedesigned = TemplateRedesigned.bind({});
+GrayRedesigned.args = {};
+GrayRedesigned.decorators = [
+    StoreDecorator({}),
+    ThemeDecorator(Theme.GRAY),
+    NewDesignDecorator,
 ];

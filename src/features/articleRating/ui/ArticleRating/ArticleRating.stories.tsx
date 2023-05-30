@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'features/ArticleRating',
+    title: 'features/Article/ArticleRating',
     component: ArticleRating,
     argTypes: {
         backgroundColor: { control: 'color' },

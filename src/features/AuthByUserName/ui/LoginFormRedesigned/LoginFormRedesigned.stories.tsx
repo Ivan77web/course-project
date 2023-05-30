@@ -13,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof LoginFormRedesigned>;
 
-const Template: ComponentStory<typeof LoginFormRedesigned> = (args) => <LoginFormRedesigned {...args} />;
+const Template: ComponentStory<typeof LoginFormRedesigned> = (args) => <div className="app_redesigned"><LoginFormRedesigned {...args} /></div>;
 
 export const Light = Template.bind({});
 Light.args = {};
@@ -24,6 +24,12 @@ Light.decorators = [StoreDecorator({
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    loginForm: { username: '123', password: 'asd' },
+})];
+
+export const OptionalBg = Template.bind({});
+OptionalBg.args = {};
+OptionalBg.decorators = [ThemeDecorator(Theme.GRAY), StoreDecorator({
     loginForm: { username: '123', password: 'asd' },
 })];
 

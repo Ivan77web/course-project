@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
-    title: 'features/ArticlePageGreeting',
+    title: 'features/Article/ArticlePageGreeting',
     component: ArticlePageGreeting,
     argTypes: {
         backgroundColor: { control: 'color' },

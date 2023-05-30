@@ -1,7 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Input } from '@/shared/ui/deprecated/Input';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/deprecated/Button';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
@@ -15,6 +14,7 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
 import { useForceUpdate } from '@/shared/lib/render/ForceUpdate';
+import { Input } from '@/shared/ui/deprecated/Input';
 
 export interface LoginFormProps {
     className?: string;

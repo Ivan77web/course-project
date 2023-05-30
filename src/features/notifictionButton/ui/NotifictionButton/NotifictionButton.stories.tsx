@@ -3,6 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { NotifictionButton } from './NotifictionButton';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'features/NotifictionButton',
@@ -46,6 +47,11 @@ export default {
 } as ComponentMeta<typeof NotifictionButton>;
 
 const Template: ComponentStory<typeof NotifictionButton> = (args) => <NotifictionButton {...args} />;
+const TemplateRedesigned: ComponentStory<typeof NotifictionButton> = (args) => (
+    <div className="app_redesigned">
+        <NotifictionButton {...args} />
+    </div>
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
@@ -56,3 +62,13 @@ Dark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];
 
 export const Gray = Template.bind({});
 Gray.decorators = [StoreDecorator({}), ThemeDecorator(Theme.GRAY)];
+
+export const NormalRedesigned = TemplateRedesigned.bind({});
+NormalRedesigned.args = {};
+NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const DarkRedesigned = TemplateRedesigned.bind({});
+DarkRedesigned.decorators = [NewDesignDecorator, StoreDecorator({}), ThemeDecorator(Theme.DARK)];
+
+export const GrayRedesigned = TemplateRedesigned.bind({});
+GrayRedesigned.decorators = [NewDesignDecorator, StoreDecorator({}), ThemeDecorator(Theme.GRAY)];

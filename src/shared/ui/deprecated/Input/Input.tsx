@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, {
-    InputHTMLAttributes, memo, useEffect, useRef,
+    InputHTMLAttributes, memo, useRef,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Input.module.scss';
@@ -51,15 +51,6 @@ export const Input = memo((props: InputProps) => {
             valueOfSelected: e.target.value,
         });
     };
-
-    // useEffects
-
-    useEffect(() => {
-        if (autoFocus) {
-            setIsFocused(true);
-            refInput.current?.focus();
-        }
-    }, [autoFocus]);
 
     return (
         <div className={classNames(cl.InputWrapper, {}, [className])}>

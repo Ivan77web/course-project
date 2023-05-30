@@ -27,6 +27,12 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     loginForm: { username: '123', password: 'asd' },
 })];
 
+export const OptionalBg = Template.bind({});
+OptionalBg.args = {};
+OptionalBg.decorators = [ThemeDecorator(Theme.GRAY), StoreDecorator({
+    loginForm: { username: '123', password: 'asd' },
+})];
+
 export const WithError = Template.bind({});
 WithError.args = {};
 WithError.decorators = [StoreDecorator({
