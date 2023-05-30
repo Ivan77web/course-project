@@ -1,23 +1,19 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ScrollToolbar } from './ScrollToolbar';
+import { PageLoader } from './PageLoader';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'widgets/ScrollToolbar',
-    component: ScrollToolbar,
+    title: 'widgets/PageLoader',
+    component: PageLoader,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ScrollToolbar>;
+} as ComponentMeta<typeof PageLoader>;
 
-const Template: ComponentStory<typeof ScrollToolbar> = (args) => (
-    <div className="app_redesigned">
-        <ScrollToolbar {...args} />
-    </div>
-);
+const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />;
 
-export const Normal = Template.bind({});
+export const Light = Template.bind({});
 
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

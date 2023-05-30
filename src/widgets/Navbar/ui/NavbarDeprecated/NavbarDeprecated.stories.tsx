@@ -6,7 +6,7 @@ import { UserRole } from '@/entities/User';
 import { NavbarDeprecated } from './NavbarDeprecated';
 
 export default {
-    title: 'widget/Navbar/NavbarDeprecated',
+    title: 'widgets/Navbar/NavbarDeprecated',
     component: NavbarDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },

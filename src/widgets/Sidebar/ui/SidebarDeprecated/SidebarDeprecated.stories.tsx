@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { SidebarDeprecated } from './SidebarDeprecated';
 
 export default {
-    title: 'widget/Sidebar/SidebarDeprecated',
+    title: 'widgets/Sidebar/SidebarDeprecated',
     component: SidebarDeprecated,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -27,6 +27,15 @@ export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: { authData: {} },
+    }),
+];
+
+export const OptionalBg = Template.bind({});
+OptionalBg.args = {};
+OptionalBg.decorators = [
+    ThemeDecorator(Theme.GRAY),
     StoreDecorator({
         user: { authData: {} },
     }),
