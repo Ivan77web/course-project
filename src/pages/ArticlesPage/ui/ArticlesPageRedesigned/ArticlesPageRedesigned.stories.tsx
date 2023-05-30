@@ -4,6 +4,7 @@ import { ArticleView, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ArticlesPageRedesigned from './ArticlesPageRedesigned';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'pages/Articles/ArticlesPage/ArticlesPageRedesigned',
@@ -143,18 +144,29 @@ export default {
     ],
 } as ComponentMeta<typeof ArticlesPageRedesigned>;
 
-const Template: ComponentStory<typeof ArticlesPageRedesigned> = (args) => <ArticlesPageRedesigned {...args} />;
+const Template: ComponentStory<typeof ArticlesPageRedesigned> = () => (
+    <div className="app_redesigned">
+        <ArticlesPageRedesigned />
+    </div>
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [NewDesignDecorator];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    NewDesignDecorator,
+];
 
 export const Gray = Template.bind({});
 Gray.args = {};
-Gray.decorators = [ThemeDecorator(Theme.GRAY)];
+Gray.decorators = [
+    ThemeDecorator(Theme.GRAY),
+    NewDesignDecorator,
+];
 
 export const Loading = Template.bind({});
 Loading.args = {};
@@ -167,6 +179,7 @@ Loading.decorators = [
             entities: {},
         },
     }),
+    NewDesignDecorator,
 ];
 
 export const LoadingDark = Template.bind({});
@@ -181,6 +194,7 @@ LoadingDark.decorators = [
         },
     }),
     ThemeDecorator(Theme.DARK),
+    NewDesignDecorator,
 ];
 
 export const LoadingGray = Template.bind({});
@@ -195,4 +209,5 @@ LoadingGray.decorators = [
         },
     }),
     ThemeDecorator(Theme.GRAY),
+    NewDesignDecorator,
 ];
