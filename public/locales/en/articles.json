@@ -16,5 +16,6 @@
     "ECONOMICS": "Economics",
     "SCIENCE": "Science",
     "Статьи не найдены": "Articles not found",
-    "Произошла ошибка при загрузке статей": "An error occurred while discovering articles"
+    "Произошла ошибка при загрузке статей": "An error occurred while discovering articles",
+    "Создать статью": "Create article"
 }

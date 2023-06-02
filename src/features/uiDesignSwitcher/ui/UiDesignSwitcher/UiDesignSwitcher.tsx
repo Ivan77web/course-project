@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cl from './UiDesignSwitcher.module.scss';
 import { Listbox } from '@/shared/ui/redesigned/Popups';
 import { Listbox as ListboxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { ToggleFeatures, getFeatureFlags } from '@/shared/lib/features';
@@ -58,7 +57,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
                 : (
                     <ListboxDeprecated
                         onChange={onChange}
-                        className={classNames(cl.UiDesignSwitcher, {}, [className])}
+                        className={classNames('', {}, [className])}
                         value={isAppRedesigned ? 'new' : 'old'}
                         items={items}
                     />
@@ -74,7 +73,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
                 : (
                     <Listbox
                         onChange={onChange}
-                        className={classNames(cl.UiDesignSwitcher, {}, [className])}
+                        className={classNames('', {}, [className])}
                         value={isAppRedesigned ? 'new' : 'old'}
                         items={items}
                     />

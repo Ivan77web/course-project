@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
+import { CreateArticlePage } from '../CreateArticlePage/CreateArticlePage';
 
 interface ArticleEditPageProps {
     className?: string;
@@ -19,7 +20,7 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
             {
                 isEdit
                     ? t('Страница редактирования статьи')
-                    : t('Страница создания статьи')
+                    : <CreateArticlePage />
             }
         </Page>
     );

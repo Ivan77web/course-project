@@ -2,7 +2,6 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cl from './DetailsContainer.module.scss';
 import { ArticleDetails } from '@/entities/Article';
 import { Card } from '@/shared/ui/redesigned/Card';
 
@@ -21,7 +20,7 @@ export const DetailsContainer = memo((props: DetailsContainerProps) => {
     }
 
     return (
-        <Card max border="roundBorder" className={classNames(cl.detailsContainer, {}, [className])} padding="24">
+        <Card max border="roundBorder" className={classNames('', {}, [className])} padding="24">
             <ArticleDetails id={articleId} />
         </Card>
     );

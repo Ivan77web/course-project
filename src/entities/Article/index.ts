@@ -1,6 +1,7 @@
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 import {
     Article,
+    ArticleBlock,
 } from './model/types/article';
 import {
     ArticleView, ArticleSortField, ArticleType, ArticleBlockType,
@@ -8,6 +9,7 @@ import {
 import { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 import { getArticleDetailsData, getArticleDetailsIsLoading } from './model/selectors/articleDetails';
 import { ArticleList } from './ui/ArticleList/ArticleList';
+import { renderArticleBlock } from './ui/ArticleDetailsRedesigned/RenderBlock';
 
 export {
     ArticleDetails,
@@ -18,7 +20,9 @@ export {
     ArticleType,
     ArticleBlockType,
     getArticleDetailsIsLoading,
+    renderArticleBlock,
 };
 
 export type { Article };
+export type { ArticleBlock };
 export type { ArticleDetailsSchema };

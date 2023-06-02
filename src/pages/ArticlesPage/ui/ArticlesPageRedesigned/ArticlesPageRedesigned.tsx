@@ -12,6 +12,8 @@ import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { CreateArticleButton } from '@/features/CreateArticleButton';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticlesPageProps {
     className?: string;
@@ -45,7 +47,15 @@ const ArticlesPageRedesigned: FC<ArticlesPageProps> = (props) => {
                     <ArticlePageGreeting />
                 </Page>
             )}
-            right={<FiltersContainer />}
+            right={(
+                <VStack
+                    max
+                    gap="16"
+                >
+                    <FiltersContainer />
+                    <CreateArticleButton />
+                </VStack>
+            )}
         />
     );
 };

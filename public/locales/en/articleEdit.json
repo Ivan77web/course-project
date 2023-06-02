@@ -1,4 +1,22 @@
 {
     "Страница редактирования статьи": "Page loading articles",
-    "Страница создания статьи": "Article creation page"
+    "Здесь будет пример написанной статьи": "Here is an example of a written article",
+    "Название статьи": "Article title",
+    "Описание статьи": "Article description",
+    "Ссылка на фото": "Link to photo",
+    "Все": "All",
+    "Экономика": "Economics",
+    "Айти": "IT",
+    "Наука": "Science",
+    "Опубликовать": "Publish",
+    "Код": "Code",
+    "Фото": "Photo",
+    "Текст": "Text",
+    "Добавить параграф": "Add paragraph",
+    "Добавить блок": "Add block",
+    "Введите код": "Enter a code",
+    "Введите ссылку на фото": "Enter a link to a photo",
+    "Введите заголовок": "Enter title",
+    "Введите параграф": "Enter a paragraph",
+    "Введите подпись к фото": "Enter a caption for the photo"
 }
