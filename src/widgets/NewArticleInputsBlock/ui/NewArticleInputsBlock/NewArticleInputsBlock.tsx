@@ -81,8 +81,6 @@ export const NewArticleInputsBlock = memo((props: NewArticleInputsBlockProps) =>
     const onClickAddBlock = () => {
         const block = createBlock();
 
-        console.log(block);
-
         if (block) {
             dispatch(NewArticleActions.addBlock(block));
         }

@@ -22,13 +22,6 @@ export const NewArticleMap = memo((props: NewArticleMapProps) => {
             <div className={cl.test} />
             <div className={cl.test} />
             <div className={cl.test} />
-
-            <div className={cl.test} />
-            <div className={cl.test} />
-            <div className={cl.test} />
-            <div className={cl.test} />
-            <div className={cl.test} />
-            <div className={cl.test} />
         </Card>
     );
 });
