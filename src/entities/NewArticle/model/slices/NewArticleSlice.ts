@@ -30,6 +30,9 @@ export const NewArticleSlice = createSlice({
         addBlock: (state, action: PayloadAction<ArticleBlock>) => {
             state.blocks.push(action.payload);
         },
+        removeBlock: (state, action: PayloadAction<string>) => {
+            state.blocks = state.blocks.filter((block) => block.id !== action.payload);
+        },
         setType: (state, action: PayloadAction<ArticleType[]>) => {
             state.type = action.payload;
         },
@@ -37,20 +40,6 @@ export const NewArticleSlice = createSlice({
             state.img = action.payload;
         },
     },
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(, (state) => {
-    //             state.error = undefined;
-    //             state.isLoading = true;
-    //         })
-    //         .addCase(, (state) => {
-    //             state.isLoading = false;
-    //         })
-    //         .addCase(, (state, action) => {
-    //             state.isLoading = false;
-    //             state.error = action.payload;
-    //         });
-    // },
 });
 
 export const { actions: NewArticleActions } = NewArticleSlice;

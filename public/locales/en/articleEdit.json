@@ -18,5 +18,6 @@
     "Введите ссылку на фото": "Enter a link to a photo",
     "Введите заголовок": "Enter title",
     "Введите параграф": "Enter a paragraph",
-    "Введите подпись к фото": "Enter a caption for the photo"
+    "Введите подпись к фото": "Enter a caption for the photo",
+    "Блоков нет":"No blocks"
 }
