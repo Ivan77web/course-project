@@ -28,11 +28,14 @@ export const NewArticlePreview = memo((props: ArticleMaketProps) => {
             />
             <Text title={data?.subtitle} />
 
-            <AppImage
-                fallback={<Skeleton width="100%" height={420} border="16px" />}
-                src={data?.img}
-                className={cl.img}
-            />
+            <div className={cl.imgBlock}>
+                <AppImage
+                    fallback={<Skeleton width="100%" height={420} border="16px" />}
+                    src={data?.img}
+                    className={cl.img}
+                />
+            </div>
+
             {
                 data?.blocks?.length
                     ? data?.blocks?.map(renderArticleBlock)

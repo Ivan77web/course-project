@@ -84,7 +84,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                     />
 
                     {
-                        textBlock.paragraphs && (
+                        textBlock?.paragraphs && (
                             <Text
                                 className={cl.textBlock}
                                 text={textBlock.paragraphs.slice(0, 2).join(' ')}

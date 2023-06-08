@@ -7,20 +7,21 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { ArticleType } from '@/entities/Article';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Button } from '@/shared/ui/redesigned/Button';
 import {
     getNewArticleTitle, getNewArticleSubtitle, getNewArticleImg, getNewArticleType, NewArticleActions,
 } from '@/entities/NewArticle';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { MultipleTabs } from '@/shared/ui/redesigned/MultipleTabs';
+import { PublishNewArticle } from '@/features/publishNewArticle';
 
 interface NewArticleMainDataProps {
     className?: string;
+    onClick?: () => void
 }
 
 export const NewArticleMainData = memo((props: NewArticleMainDataProps) => {
+    const { className, onClick } = props;
     const dispatch = useAppDispatch();
-    const { className } = props;
     const { t } = useTranslation('articleEdit');
     const title = useSelector(getNewArticleTitle);
     const subTitle = useSelector(getNewArticleSubtitle);
@@ -100,11 +101,7 @@ export const NewArticleMainData = memo((props: NewArticleMainDataProps) => {
                     }
                 </Card>
 
-                <Button
-                    variant="filled"
-                >
-                    {t('Опубликовать')}
-                </Button>
+                <PublishNewArticle onClick={onClick} />
             </VStack>
         </Card>
     );

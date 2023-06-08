@@ -136,6 +136,18 @@
       "userId": "2",
       "text": "фывфывфывфыв",
       "id": "uf41w3A"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "123",
+      "id": "bSzBTRr"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "asasdasd",
+      "id": "YTSb6DK"
     }
   ],
   "users": [
@@ -734,6 +746,91 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Новая статья",
+      "subtitle": "О чем будет статья?",
+      "img": "qweqweqwe",
+      "views": 0,
+      "createdAt": "7:5:2023",
+      "userId": "1",
+      "type": [
+        "SCIENCE",
+        "ALL"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "TEST TEST TEST"
+          ],
+          "title": "TEST TEST TEST"
+        }
+      ],
+      "id": "gPQXZ5u"
+    },
+    {
+      "title": "TEST TEST TEST TEST  ",
+      "subtitle": "О чем будет статья?",
+      "img": "qweqweqwewqe",
+      "views": 0,
+      "createdAt": "7:5:2023",
+      "userId": "1",
+      "type": [
+        "ALL"
+      ],
+      "blocks": [],
+      "id": "WfdPTc5"
+    },
+    {
+      "title": "TEST TEST TEST TEST  ",
+      "subtitle": "О чем будет статья?",
+      "img": "qweqweqwewqe",
+      "views": 0,
+      "createdAt": "7:5:2023",
+      "userId": "1",
+      "type": [
+        "ALL"
+      ],
+      "blocks": [],
+      "id": "QyU91pb"
+    },
+    {
+      "title": "TEST TEST TEST TEST  ",
+      "subtitle": "О чем будет статья?",
+      "img": "qweqweqwewqe",
+      "views": 0,
+      "createdAt": "7:5:2023",
+      "userId": "1",
+      "type": [
+        "ALL",
+        "IT"
+      ],
+      "blocks": [],
+      "id": "XwvO6C0"
+    },
+    {
+      "title": "TEST TEST TEST TEST",
+      "subtitle": "О чем будет статья?",
+      "img": "dasdasdasdad",
+      "views": 0,
+      "createdAt": "07:05:2023",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "qweqweqwe"
+          ],
+          "title": "qweqwe"
+        }
+      ],
+      "id": "C0IsgBw"
     }
   ],
   "article-ratings": [

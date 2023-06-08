@@ -14,6 +14,13 @@ export const NewArticleSlice = createSlice({
     name: 'NewArticle',
     initialState,
     reducers: {
+        reset: (state) => {
+            state.title = 'Новая статья';
+            state.subtitle = 'О чем будет статья?';
+            state.img = '';
+            state.type = [ArticleType.ALL];
+            state.blocks = [];
+        },
         setTitle: (state, action: PayloadAction<string>) => {
             state.title = action.payload;
         },

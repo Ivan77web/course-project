@@ -20,6 +20,8 @@ export const NewArticleInputsBlock = memo((props: NewArticleInputsBlockProps) =>
     const { className } = props;
     const dispatch = useAppDispatch();
     const { t } = useTranslation('articleEdit');
+    const blocks = useSelector(getNewArticleBlocks);
+
     const [typeBlock, setTypeBlock] = useState<ArticleBlockType>(ArticleBlockType.TEXT);
     const [linkToPhoto, setLinkToPhoto] = useState<string>('');
     const [captionForThePhoto, setCaptionForThePhotosetLinkToPhoto] = useState<string>('');
@@ -27,7 +29,6 @@ export const NewArticleInputsBlock = memo((props: NewArticleInputsBlockProps) =>
     const [title, setTitle] = useState<string>('');
     const [text, setText] = useState<string>('');
     const [paragraphs, setParagraphs] = useState<string[]>([]);
-    const blocks = useSelector(getNewArticleBlocks);
 
     const options = [
         { value: ArticleBlockType.CODE, content: t('Код') },
@@ -57,6 +58,8 @@ export const NewArticleInputsBlock = memo((props: NewArticleInputsBlockProps) =>
                 type: ArticleBlockType.CODE,
                 code,
             };
+
+            setCode('');
         } else if (typeBlock === ArticleBlockType.IMAGE && linkToPhoto.length && captionForThePhoto.length) {
             block = {
                 id: String(blocks ? blocks.length + 1 : 0),
@@ -64,13 +67,20 @@ export const NewArticleInputsBlock = memo((props: NewArticleInputsBlockProps) =>
                 src: linkToPhoto,
                 title: captionForThePhoto,
             };
-        } else if (typeBlock === ArticleBlockType.TEXT && paragraphs.length && title.length) {
+
+            setLinkToPhoto('');
+            setCaptionForThePhotosetLinkToPhoto('');
+        } else if (typeBlock === ArticleBlockType.TEXT && (paragraphs.length || text) && title.length) {
             block = {
                 id: String(blocks ? blocks.length + 1 : 0),
                 type: ArticleBlockType.TEXT,
-                paragraphs,
+                paragraphs: text ? [...paragraphs, text] : paragraphs,
                 title,
             };
+
+            setTitle('');
+            setText('');
+            setParagraphs([]);
         } else {
             return null;
         }

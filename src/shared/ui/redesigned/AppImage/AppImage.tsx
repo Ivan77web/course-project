@@ -1,6 +1,9 @@
 import {
     ImgHTMLAttributes, ReactElement, memo, useLayoutEffect, useState,
 } from 'react';
+import { Loader } from '../Loader';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cl from './AppImage.module.scss';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
@@ -25,6 +28,7 @@ export const AppImage = memo((props: AppImageProps) => {
         image.src = src ?? '';
         image.onload = () => {
             setIsLoading(false);
+            setIsError(false);
         };
         image.onerror = () => {
             setIsLoading(false);
@@ -36,13 +40,23 @@ export const AppImage = memo((props: AppImageProps) => {
         return fallback;
     }
 
-    if (isError && errorFallback) {
-        return errorFallback;
+    if ((isError && errorFallback) || (isError && fallback)) {
+        if (errorFallback) {
+            return errorFallback;
+        }
+
+        if (fallback) {
+            return fallback;
+        }
+    }
+
+    if (isError && isLoading) {
+        return <Loader />;
     }
 
     return (
         <img
-            className={className}
+            className={classNames(cl.AppImage, {}, [className])}
             src={src}
             alt={alt}
             {...otherProps}

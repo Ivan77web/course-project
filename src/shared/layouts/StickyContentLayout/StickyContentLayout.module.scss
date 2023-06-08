@@ -14,6 +14,9 @@
     justify-self: center;
     padding: 0 16px;
     width: 100%;
+    overflow-x: hidden;
+
+    // overflow-x: hidden
 }
 
 .right {
@@ -23,6 +26,5 @@
 .left,
 .right {
     position: sticky;
-    // top: 32px;
     height: fit-content;
 }

@@ -1,16 +1,31 @@
-.createArticlePage {
+.CreateArticlePage {
+    overflow-x: hidden;
+}
 
+.content {
+    height: calc(100vh - 64px);
+    position: relative;
+
+    // position: relative
 }
 
 .NewArticlePreview {
     width: 100%;
     overflow-y: scroll;
     margin-bottom: auto;
+    overflow-x: hidden;
+
+    // overflow-x: hidden
 }
 
 .NewArticleInputsBlock {
     width: 100%;
     margin-top: 32px;
+}
+
+.right {
+    width: 300px;
+    height: calc(100vh - 64px);
 }
 
 .NewArticleMainData {
@@ -23,12 +38,4 @@
     width: 100%;
     max-height: calc(100vh - 96px - 294px);
     overflow-y: scroll;
-}
-
-.content {
-    height: calc(100vh - 64px);
-}
-
-.right {
-    width: 300px;
 }
