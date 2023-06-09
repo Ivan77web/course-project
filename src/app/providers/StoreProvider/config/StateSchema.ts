@@ -13,6 +13,7 @@ import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { CounterSchema } from '@/entities/Counter';
 import { NewArticleSchema } from '@/entities/NewArticle';
+import { NewUserSchema } from '@/entities/NewUser';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -28,6 +29,7 @@ export interface StateSchema {
     articlesPage?: ArticlesPageSchema;
     articlesDetailsPage?: ArticleDetailsPageSchema,
     newArticle?: NewArticleSchema,
+    newUser?: NewUserSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

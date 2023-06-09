@@ -9,6 +9,7 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotifictionButton } from '@/features/notifictionButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cl from './NavbarRedesigned.module.scss';
+import { RegestrationModal } from '@/features/RegestrationModal';
 
 interface NavbarProps {
     className?: string
@@ -18,13 +19,22 @@ export const NavbarRedesigned = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation('navbar');
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
+    const [isOpenRegistration, setIsOpenRegistration] = useState(false);
 
-    const onCloseModal = useCallback(() => {
+    const onCloseModalAuth = useCallback(() => {
         setIsAuthModal(false);
     }, []);
 
-    const onOpenModal = useCallback(() => {
+    const onCloseModalRegistration = useCallback(() => {
+        setIsOpenRegistration(false);
+    }, []);
+
+    const onOpenModalAuth = useCallback(() => {
         setIsAuthModal(true);
+    }, []);
+
+    const onOpenModalRegistration = useCallback(() => {
+        setIsOpenRegistration(true);
     }, []);
 
     if (authData) {
@@ -40,18 +50,34 @@ export const NavbarRedesigned = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cl.navbar, {}, [className])}>
-            <Button
-                variant="clear"
-                className={cl.links}
-                onClick={onOpenModal}
-            >
-                {t('Войти')}
-            </Button>
+            <HStack gap="8">
+                <Button
+                    variant="clear"
+                    className={cl.links}
+                    onClick={onOpenModalAuth}
+                >
+                    {t('Войти')}
+                </Button>
+                <Button
+                    variant="clear"
+                    className={cl.links}
+                    onClick={onOpenModalRegistration}
+                >
+                    {t('Регистрация')}
+                </Button>
+            </HStack>
 
             {isAuthModal && (
                 <LoginModal
                     isOpen={isAuthModal}
-                    onClose={onCloseModal}
+                    onClose={onCloseModalAuth}
+                />
+            )}
+
+            {isOpenRegistration && (
+                <RegestrationModal
+                    isOpen={isOpenRegistration}
+                    onClose={onCloseModalRegistration}
                 />
             )}
         </header>

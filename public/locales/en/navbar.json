@@ -7,5 +7,6 @@
     "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
     "Создать статью": "Create article",
     "Профиль": "Profile",
-    "Админка": "Admin"
+    "Админка": "Admin",
+    "Регистрация":"Registration"
 }

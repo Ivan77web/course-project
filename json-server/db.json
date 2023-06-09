@@ -831,6 +831,33 @@
         }
       ],
       "id": "C0IsgBw"
+    },
+    {
+      "title": "TEST HELLO",
+      "subtitle": "asfasfasfasfafsaf",
+      "img": "https://sun9-46.userapi.com/impf/c636025/v636025844/a573/cHHVCHMB_QY.jpg?size=2048x1536&quality=96&sign=0c596d9377e335ea96cc6f4f3a37b311&type=album",
+      "views": 0,
+      "createdAt": "08:05:2023",
+      "userId": "2",
+      "type": [
+        "ALL"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "ФОто выше"
+          ],
+          "title": "Самый красивый мужчина"
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "йвлдйцйдцвждйцвдйцв"
+        }
+      ],
+      "id": "4VSS6n6"
     }
   ],
   "article-ratings": [
@@ -932,6 +959,12 @@
       "articleId": "13",
       "rate": 3,
       "id": "orssOA7"
+    },
+    {
+      "userId": "2",
+      "articleId": "4VSS6n6",
+      "rate": 5,
+      "id": "c-NSvoT"
     }
   ],
   "profile-ratings": [
