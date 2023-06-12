@@ -7,6 +7,7 @@ import { isUserAdmin, isUserManager, getUserRole } from './model/selectors/roleS
 import { useJsonSettings } from './model/selectors/jsonSettings';
 import { initAuthData } from './model/services/initAuthData';
 import { saveJsonSettings } from './model/services/saveJsonSettings';
+import { JsonSettings } from './model/types/jsonSettings';
 
 export {
     userReducer,
@@ -22,5 +23,6 @@ export {
     initAuthData,
 };
 
+export type { JsonSettings };
 export type { User };
 export type { UserSchema };

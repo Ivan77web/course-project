@@ -12,3 +12,4 @@ export const getNewUserAge = (state: StateSchema) => state.newUser?.age;
 export const getNewUserCurrency = (state: StateSchema) => state.newUser?.currency;
 export const getNewUserCountry = (state: StateSchema) => state.newUser?.country;
 export const getNewUserCity = (state: StateSchema) => state.newUser?.city;
+export const getNewUserOnSuccess = (state: StateSchema) => state.newUser?.onSuccess;

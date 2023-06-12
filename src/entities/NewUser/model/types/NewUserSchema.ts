@@ -15,4 +15,6 @@ export interface NewUserSchema {
     currency?: Currency;
     country?: Country;
     city?: string;
+    freeUsername?: boolean;
+    onSuccess?: boolean;
 }

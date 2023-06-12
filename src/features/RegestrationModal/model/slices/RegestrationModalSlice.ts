@@ -1,9 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RegestrationModalSchema } from '../types/RegestrationModalSchema';
 
-const initialState: RegestrationModalSchema = {
-
-};
+const initialState: RegestrationModalSchema = {};
 
 export const RegestrationModalSlice = createSlice({
     name: 'RegestrationModal',

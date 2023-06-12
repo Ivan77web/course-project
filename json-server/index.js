@@ -34,6 +34,53 @@ server.post('/login', (req, res) => {
 
         return res.status(403).json({ message: 'User not found' });
     } catch (e) {
+        console.log(1111);
+        console.log(e);
+        return res.status(500).json({ message: e.message });
+    }
+});
+
+// server.post('/registration', (req, res) => {
+//     try {
+//         console.log(req.body);
+
+//         return '';
+
+//         // const { username, password } = req.body;
+//         // const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
+//         // const { users = [] } = db;
+
+//         // const userFromBd = users.find(
+//         //     (user) => user.username === username && user.password === password,
+//         // );
+
+//         // if (userFromBd) {
+//         //     return res.json(userFromBd);
+//         // }
+
+//         // return res.status(403).json({ message: 'User not found' });
+//     } catch (e) {
+//         console.log(e);
+//         return res.status(500).json({ message: e.message });
+//     }
+// });
+
+server.post('/checkUsername', (req, res) => {
+    try {
+        const { username } = req.body;
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
+        const { users = [] } = db;
+
+        const userFromBd = users.find(
+            (user) => user.username === username,
+        );
+
+        if (userFromBd) {
+            return res.json({ message: 'fail' });
+        }
+
+        return res.json({ message: 'success' });
+    } catch (e) {
         console.log(e);
         return res.status(500).json({ message: e.message });
     }

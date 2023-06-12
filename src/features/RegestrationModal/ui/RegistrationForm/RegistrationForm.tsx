@@ -1,17 +1,22 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './RegistrationForm.module.scss';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { getNewUserAll, NewUserReducer, NewUserActions } from '@/entities/NewUser';
+import {
+    getNewUserAll, NewUserReducer, NewUserActions, getNewUserOnSuccess,
+} from '@/entities/NewUser';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { registrationNewUser } from '../../model/services/registrationNewUser/registrationNewUser';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 export interface RegistrationFormProps {
     className?: string;
@@ -27,6 +32,7 @@ const RegistrationForm = memo((props: RegistrationFormProps) => {
     const { className, onSuccess } = props;
     const { t } = useTranslation();
     const newUserData = useSelector(getNewUserAll);
+    const newUserOnSuccess = useSelector(getNewUserOnSuccess);
 
     const onChangeFirst = useCallback((val: string) => {
         dispatch(NewUserActions.setFirst(val));
@@ -71,8 +77,16 @@ const RegistrationForm = memo((props: RegistrationFormProps) => {
     }, [dispatch]);
 
     const onRegistrationClick = useCallback(() => {
+        localStorage.setItem(USER_LOCALSTORAGE_KEY, '12121212');
+        dispatch(registrationNewUser());
+    }, [dispatch]);
 
-    }, []);
+    useEffect(() => {
+        if (newUserOnSuccess) {
+            onSuccess();
+            dispatch(NewUserActions.reset);
+        }
+    }, [newUserOnSuccess, onSuccess, dispatch]);
 
     return (
         <DynamicModuleLoader
@@ -84,8 +98,20 @@ const RegistrationForm = memo((props: RegistrationFormProps) => {
                 gap="16"
             >
                 <HStack justify="center" max>
-                    <Avatar />
+                    <Avatar
+                        src={newUserData?.avatar}
+                    />
                 </HStack>
+
+                {
+                    (!newUserData?.freeUsername)
+                    && (
+                        <Text
+                            variant="error"
+                            text={t('Username уже занят')}
+                        />
+                    )
+                }
 
                 <Input
                     type="text"
@@ -163,14 +189,3 @@ const RegistrationForm = memo((props: RegistrationFormProps) => {
 });
 
 export default RegistrationForm;
-
-// "username": "admin",
-// "password": "123",
-// "avatar": "https://sun9-36.userapi.com/impg/c855220/v855220920/217645/M_4Hrk9SIZ4.jpg?size=723x1080&quality=96&sign=907eeb1184d759743dc91b92133cc94a&type=album",
-// "jsonSettings": {
-// "first": "Иван",
-// "lastname": "Шестопалов 111",
-// "age": 20,
-// "currency": "RUB",
-// "country": "Russia",
-// "city": "Moscow"

@@ -1,10 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 const MainPage = memo(() => {
     const { t } = useTranslation('main');
-
+    const dispatch = useAppDispatch();
     // const tabs = [
     //     { value: '1', content: <p>1</p> },
     //     { value: '2', content: <p>2</p> },

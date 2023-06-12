@@ -148,6 +148,12 @@
       "userId": "1",
       "text": "asasdasd",
       "id": "YTSb6DK"
+    },
+    {
+      "articleId": "9",
+      "userId": "0zg33M6",
+      "text": "Ну не знаю, питон лучше(((",
+      "id": "ECoSzF_"
     }
   ],
   "users": [
@@ -204,6 +210,22 @@
       "jsonSettings": {
         "isArticlePageWasOpened": true
       }
+    },
+    {
+      "username": "jmyh",
+      "password": "sonya2003",
+      "avatar": "https://sun9-79.userapi.com/impg/YiphzPbgnb2ATJeOcU6tDyP48tVe5fd4AHoTYg/CAP7l7OZTRY.jpg?size=1080x1080&quality=95&sign=450f031749de101760e11892e0dfd4b7&type=album",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
+      },
+      "id": "0zg33M6"
     }
   ],
   "profile": [
@@ -239,6 +261,17 @@
       "city": "Moscow",
       "username": "testuser",
       "avatar": "https://sun1-87.userapi.com/impg/tRxej3Q1HTz4NAgsFDR2nlFni-I4PYgQqhiV3w/VI2RqkRijKE.jpg?size=960x960&quality=95&sign=79f905338520287eb55a728d93e1c100&type=album"
+    },
+    {
+      "id": "0zg33M6",
+      "first": "Jmyh",
+      "lastname": "Mommy of admin",
+      "age": 20,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Ухта",
+      "username": "jmyh",
+      "avatar": "https://sun9-79.userapi.com/impg/YiphzPbgnb2ATJeOcU6tDyP48tVe5fd4AHoTYg/CAP7l7OZTRY.jpg?size=1080x1080&quality=95&sign=450f031749de101760e11892e0dfd4b7&type=album"
     }
   ],
   "articles": [

@@ -17,6 +17,8 @@ const initialState: NewUserSchema = {
     currency: undefined,
     country: undefined,
     city: undefined,
+    freeUsername: true,
+    onSuccess: false,
 };
 
 export const NewUserSlice = createSlice({
@@ -55,6 +57,29 @@ export const NewUserSlice = createSlice({
         },
         setCity: (state, action: PayloadAction<string>) => {
             state.city = action.payload;
+        },
+        setFreeUsername: (state, action: PayloadAction<boolean>) => {
+            state.freeUsername = action.payload;
+        },
+        setOnSuccess: (state, action: PayloadAction<boolean>) => {
+            state.onSuccess = action.payload;
+        },
+        reset: (state) => {
+            state = {
+                username: '',
+                password: '',
+                roles: [UserRole.USER],
+                features: [],
+                avatar: undefined,
+                first: undefined,
+                lastname: undefined,
+                age: undefined,
+                currency: undefined,
+                country: undefined,
+                city: undefined,
+                freeUsername: true,
+                onSuccess: false,
+            };
         },
     },
     // extraReducers: (builder) => {
