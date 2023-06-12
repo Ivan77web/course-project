@@ -30,7 +30,7 @@ const initialReducers: ReducersList = {
 const RegistrationForm = memo((props: RegistrationFormProps) => {
     const dispatch = useAppDispatch();
     const { className, onSuccess } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('registration');
     const newUserData = useSelector(getNewUserAll);
     const newUserOnSuccess = useSelector(getNewUserOnSuccess);
 
