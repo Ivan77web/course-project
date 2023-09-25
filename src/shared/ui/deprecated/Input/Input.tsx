@@ -45,11 +45,11 @@ export const Input = memo((props: InputProps) => {
     const onChangeHundler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
 
-        setValueForDefineLength({
-            value: e.target.value,
-            selected: e.target?.value?.length || 0,
-            valueOfSelected: e.target.value,
-        });
+        // setValueForDefineLength({
+        //     value: e.target.value,
+        //     selected: e.target?.value?.length || 0,
+        //     valueOfSelected: e.target.value,
+        // });
     };
 
     return (

@@ -154,6 +154,24 @@
       "userId": "0zg33M6",
       "text": "Ну не знаю, питон лучше(((",
       "id": "ECoSzF_"
+    },
+    {
+      "articleId": "rkd0nxi",
+      "userId": "BRxRs6S",
+      "text": "Завтра будет 2 часть",
+      "id": "edj8oLX"
+    },
+    {
+      "articleId": "rkd0nxi",
+      "userId": "1",
+      "text": "Ждем",
+      "id": "M7MSRFd"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "test",
+      "id": "i5K8w2U"
     }
   ],
   "users": [
@@ -167,11 +185,11 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "avatar": "https://sun9-36.userapi.com/impg/c855220/v855220920/217645/M_4Hrk9SIZ4.jpg?size=723x1080&quality=96&sign=907eeb1184d759743dc91b92133cc94a&type=album",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_gray_theme",
         "isFirstVisit": true,
         "settingsageHasBeenOpen": false,
         "isArticlePageWasOpened": true
@@ -226,6 +244,86 @@
         "isArticlePageWasOpened": true
       },
       "id": "0zg33M6"
+    },
+    {
+      "username": "123123123",
+      "password": "213123",
+      "avatar": "123123123",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": false
+      },
+      "id": "Z9iJmvg"
+    },
+    {
+      "username": "weqweqeqweqweqwe",
+      "password": "213123",
+      "avatar": "123123123",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": false
+      },
+      "id": "6UkQmS7"
+    },
+    {
+      "username": "qwedsadcxzc",
+      "password": "xzcxzc",
+      "avatar": "zxczxc",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": false
+      },
+      "id": "eBgAkMX"
+    },
+    {
+      "username": "Пудж",
+      "password": "12345",
+      "avatar": "https://dota2.ru/img/heroes/pudge/portrait.jpg",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
+      },
+      "id": "ThRrkVH"
+    },
+    {
+      "username": "Vera",
+      "password": "12345",
+      "avatar": "https://sun9-62.userapi.com/impg/XBji4xuFghJlVGiEQKkWbyR1oPTIptK_q_AlNg/paFPpZnWtdY.jpg?size=715x879&quality=95&sign=89832b6a1a5ee203115fddfccbdb2758&type=album",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isFirstVisit": true,
+        "isArticlePageWasOpened": true
+      },
+      "id": "BRxRs6S"
     }
   ],
   "profile": [
@@ -272,6 +370,61 @@
       "city": "Ухта",
       "username": "jmyh",
       "avatar": "https://sun9-79.userapi.com/impg/YiphzPbgnb2ATJeOcU6tDyP48tVe5fd4AHoTYg/CAP7l7OZTRY.jpg?size=1080x1080&quality=95&sign=450f031749de101760e11892e0dfd4b7&type=album"
+    },
+    {
+      "id": "Z9iJmvg",
+      "first": "123123",
+      "lastname": "123123",
+      "age": 213,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "123213",
+      "username": "123123123",
+      "avatar": "123123123"
+    },
+    {
+      "id": "6UkQmS7",
+      "first": "123123",
+      "lastname": "123123",
+      "age": 213,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "123213",
+      "username": "weqweqeqweqweqwe",
+      "avatar": "123123123"
+    },
+    {
+      "id": "eBgAkMX",
+      "first": "2313",
+      "lastname": "213213",
+      "age": 0,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "xzczxc",
+      "username": "qwedsadcxzc",
+      "avatar": "zxczxc"
+    },
+    {
+      "id": "ThRrkVH",
+      "first": "Дима",
+      "lastname": "Пуджевич",
+      "age": 12,
+      "currency": "USD",
+      "country": "Kazakhstan",
+      "city": "Алматы",
+      "username": "Пудж",
+      "avatar": "https://dota2.ru/img/heroes/pudge/portrait.jpg"
+    },
+    {
+      "id": "BRxRs6S",
+      "first": "Вера",
+      "lastname": "Шестопалова",
+      "age": 45,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Сосногорск",
+      "username": "Vera",
+      "avatar": "https://sun9-62.userapi.com/impg/XBji4xuFghJlVGiEQKkWbyR1oPTIptK_q_AlNg/paFPpZnWtdY.jpg?size=715x879&quality=95&sign=89832b6a1a5ee203115fddfccbdb2758&type=album"
     }
   ],
   "articles": [
@@ -891,6 +1044,44 @@
         }
       ],
       "id": "4VSS6n6"
+    },
+    {
+      "title": "Статья о шитье",
+      "subtitle": "В этой статье будет рассказано, как правильно шить",
+      "img": "https://zvetnoe.ru/upload/images/blog/173_Tkani_dlya_shitya/2.jpg",
+      "views": 0,
+      "createdAt": "17:05:2023",
+      "userId": "BRxRs6S",
+      "type": [
+        "ALL"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            " Чтобы правильно выбрать подплечники, необходимо знать, какими они бывают и чем отличаются друг от друга. Основные отличия в их форме, которая зависит от того, для изделий с какими рукавами они предназначены. И тут вариантов немного. По форме подплечники подразделяются на подокатники, реглан и полуреглан. Первые имеют треугольные очертания и используются в изделиях с втачными рукавами и высоким окатом. Другие разновидности округло-продолговатые, подходят для одежды с цельнокроенными рукавами или рукавами реглан. Также подплечники бывают цельными, сшивными, клееными и иглопробивными, съемными и несъемными. Изготавливаются из поролона, синтепона, плотной ткани или комбинированных материалов."
+          ],
+          "title": "Основные виды, особенности, различия подплечников"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://www.wellmart-msk.ru/img/work/article/a_45_39.jpg",
+          "title": "Подплечники "
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            " Форма, размер, цвет, толщина накладок для плеч зависят от вида и фасона швейного изделия, а также от формы рукава и материала, из которого шьется одежда. Они могут быть совсем тонкими и незаметными, а иногда большими и объемными. Важно так подобрать их по размеру, чтобы подплечники четко выполняли задуманную дизайнером функцию, не топорщились и были незаметными. Наиболее востребованы в производстве одежды подплечники толщиной 6, 13 и 25 мм, хотя, конечно, используются и другие варианты.",
+            "Для придания объема и нужной формы одежде чаще всего выбирают упругие подплечники из поролона, а если необходимо лишь немного скорректировать линию плеча, подойдут более износостойкие синтепоновые варианты.",
+            "Цвет и текстура материала, которым обтянуты плечевые накладки, так же немаловажны. Желательно, чтобы они полностью соответствовали ткани, из которой пошито изделие, или материалу подкладки, если речь идет о верхней одежде. В блузах и платьях можно также использовать накладки телесного цвета. В любом случае, при необходимости, их всегда можно обтянуть подходящей тканью самостоятельно."
+          ],
+          "title": "Как правильно выбрать подплечники?"
+        }
+      ],
+      "id": "rkd0nxi"
     }
   ],
   "article-ratings": [
@@ -998,6 +1189,25 @@
       "articleId": "4VSS6n6",
       "rate": 5,
       "id": "c-NSvoT"
+    },
+    {
+      "userId": "1",
+      "articleId": "4VSS6n6",
+      "rate": 3,
+      "id": "vY9MoUr"
+    },
+    {
+      "userId": "BRxRs6S",
+      "articleId": "rkd0nxi",
+      "rate": 5,
+      "feedback": "фывфывфывфыв",
+      "id": "oLz-GoU"
+    },
+    {
+      "userId": "1",
+      "articleId": "rkd0nxi",
+      "rate": 5,
+      "id": "kvH18Lp"
     }
   ],
   "profile-ratings": [
