@@ -58,13 +58,13 @@ export const NavbarRedesigned = memo(({ className }: NavbarProps) => {
                 >
                     {t('Войти')}
                 </Button>
-                <Button
+                {/* <Button
                     variant="clear"
                     className={cl.links}
                     onClick={onOpenModalRegistration}
                 >
                     {t('Регистрация')}
-                </Button>
+                </Button> */}
             </HStack>
 
             {isAuthModal && (
